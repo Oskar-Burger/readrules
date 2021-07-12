@@ -631,9 +631,10 @@ FindDataFiles<-function(MainDir="/home/maciej/Documents/R-PRJ/Oskar", DataDirNam
   return(Mat)
 }
 
-check.name<-function(path, ltab = matrix(c('Emily','Frankie','Gairan','Julia', 'Sarah','Scott','thinkery','Vivian','Oskar','Sabrina','Bruce',
-                                           'EM','FF','GP','JW', 'SP','SC','BR','VD','OB','SG','BR',
-                                           'TA','MM','MA','MA','BA','AS','TH','SP','FD','NB','EC'),ncol=3), back=1){
+check.name<-function(path, ltab = matrix(c('Emily','Frankie','Gairan','Julia', 'Sarah','Scott','thinkery','Vivian','Oskar','Sabrina','Bruce','Micah','Gordon','Laura', # researcher first name
+                                           'EM','FF','GP','JW', 'SP','SC','BR','VD','OB','SG','BR','MG','GI','LS', # researcher initial
+                                           'TA','MM','MA','MA','BA','AS','TH','SP','FD','NB','EC','SY','FA','YP'),ncol=3), back=1) # fieldsite initial. these must all match up! 
+                                            { 
   if (!length(ncol(ltab)) || ncol(ltab)!=3) stop('Wrong ltab',call.=FALSE)
   ltab <- toupper(ltab)
   fi <- toupper(basename(path))
@@ -1085,9 +1086,10 @@ postmerge<-function(DF, varspos, newvar){
 # Load database
 #########################################################################################################3
 
+# as of 09/02/2020, this is an R project so don't need to use getwd()
 
 #setwd("/home/maciej/Documents/R-PRJ/Oskar")
-setwd("C:/Users/ob3587/iCloudDrive/DataToProcess2")
+#setwd("C:/Users/ob3587/iCloudDrive/DataToProcess2")
 #setwd("/home/maciej/Documents/R-PRJ/Oskar/MARCH2020")
 #setwd("C:/Users/ob3587/Dropbox/UT Austin PM/EvoLearn/DataToProcess")
 #setwd("/home/maciej/Documents/R-PRJ/Oskar/DataToProsess4")
@@ -1129,8 +1131,9 @@ PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.p
 PIDTEST
 
 # here is no message
-PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 10)
+PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=20, show.new.pids=50,max.pid.digit = 10)
 PIDTEST
+
 
 # go to console and press enter several times
 
@@ -1176,7 +1179,13 @@ as.data.frame(PIDTEST)
 #write.xlsx(PIDTEST, 'PIDRES_BA_17FEB2020.xlsx', sheetName = 'SP_BA_PIDS')
 #write.xlsx(PIDTEST, 'PIDRES_AS_17FEB2020.xlsx', sheetName = 'SC_AS_PIDS')
 #write.xlsx(PIDTEST, 'PIDRES_SP_17FEB2020.xlsx', sheetName = 'VD_SP_PIDS')
-write.xlsx(PIDTEST, 'PIDRES_NB_03AUG2020.xlsx', sheetName = 'SG_NB_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_NB_03AUG2020.xlsx', sheetName = 'SG_NB_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_EC_04SEP2020.xlsx', sheetName = 'EC_BR_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_SY_20NOV2020.xlsx', sheetName = 'SY_MG_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_FA_10FEB2020.xlsx', sheetName = 'FA_GI_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_QTHTKSpaper_18JUN2021.xlsx', sheetName = 'QTHTKS_PIDS')
+write.xlsx(PIDTEST, 'PIDRES_YP_09JUL2021.xlsx', sheetName = 'YP_PIDS')
+
 
 
 #########################################################################################################3
@@ -1287,17 +1296,17 @@ DBs$Queensland
 # this is for Cristine's Stanford talk 
 # NOTE: you made a 'master file' for Bruce and Emily to start on 
 # paper analysis, but those haven't moved along 
-DF1 = as.data.frame(DB$PIDreg_noname) #
-DF2 = as.data.frame(DB$Biometric) #
-DF3 = as.data.frame(DB$AcaKnowl) #
-#DF3 = as.data.frame(DB$CategorVerb) #
-#DF4 = as.data.frame(DB$ChildInterview) #
-DF4 = as.data.frame(DB$HookTask) #
-DF5 = as.data.frame(DB$HTKS) #
-DF6 = as.data.frame(DB$Marshmallow) #
-DF7 = as.data.frame(DB$NecklaceOverIm) #
-#DF9 = as.data.frame(DB$Phonolog) #
-DF8 = as.data.frame(DB$PuzzleOverIm) #
+# DF1 = as.data.frame(DB$PIDreg_noname) #
+# DF2 = as.data.frame(DB$Biometric) #
+# DF3 = as.data.frame(DB$AcaKnowl) #
+# #DF3 = as.data.frame(DB$CategorVerb) #
+# #DF4 = as.data.frame(DB$ChildInterview) #
+# DF4 = as.data.frame(DB$HookTask) #
+# DF5 = as.data.frame(DB$HTKS) #
+# DF6 = as.data.frame(DB$Marshmallow) #
+# DF7 = as.data.frame(DB$NecklaceOverIm) #
+# #DF9 = as.data.frame(DB$Phonolog) #
+# DF8 = as.data.frame(DB$PuzzleOverIm) #
 #DF12 = as.data.frame(DB$Queensland)
 
 # rename PID_student to PID in necklace
@@ -1332,10 +1341,63 @@ DF8 = as.data.frame(DB$PuzzleOverIm) #
 
 #DF_m1 = fast.merge.list(list(DF10,DF2,DF1,DF6,DF7,DF11,DF8,DF4, DF5, DF3, DF9),by = c('PID_location'))
 
-stanlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7,DF8)
-stanlist = rename.duplicated(stanlist, extensions=c('PIDr','BIO','AKA','HOOK',"HTKS","MMT",'NECKL','PUZZ'), 
-                                                    ignore=c('PID','location','PID_location'))
-DF_stan = fast.merge.list(stanlist, by=c('PID','PID_location','location'))
+# MasterFile QTHTKS ----
+# Tanna, Saltpond, and Mah Meri, Natal 
+library(tidyverse)
+DF1 = as.data.frame(DB$PIDreg_noname) #
+DF2 = as.data.frame(DB$Biometric) #
+DF3 = as.data.frame(DB$HTKS) #
+DF4 = as.data.frame(DB$Queensland) #
+DF5 = as.data.frame(DB$ChildInterview) #
+DF6 = as.data.frame(DB$Partsurvey) #
+DF7 = as.data.frame(DB$AdInt)
+
+# idea: rename each DF, child interview, adult interview, participant survey first, then use fast merge?. 
+# import column linker 
+adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx")
+chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx")
+adcols = adultcollinks %>% select(oldname = AdultInt, newname = NewName, PartSurv)
+chicols = chicollinks %>% select(oldname = ChildInt, newname = NewName, PartSurv)
+partcols = data.frame(oldname = c(adcols$PartSurv, chicols$PartSurv), 
+                      newname = c(adcols$newname, chicols$newname))
+allcols = bind_rows(adcols,chicols,partcols)
+
+setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+setnames(DF6, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+setnames(DF7, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+# recall that for years in school: 
+# child interview: Q6a: which we use below 
+# adult interview: Q20a_schlyrs 
+# part surv: years in school minus current age if you are in school now...
+
+QTHTKSlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7)
+QTHTKSlist = rename.duplicated(QTHTKSlist, extensions=c('PIDr','BIO','HTKS',"QT",'CHIINT','Psurv','Adint'), 
+                               ignore=c('PID','location','PID_location'))
+DF_QTHTKS <- fast.merge.list(QTHTKSlist,by=c('PID','location','PID_location'))
+DF_QTHTKS = DF_QTHTKS %>% mutate(cmb_age.Psurv = replace(cmb_age.Psurv, cmb_age.Psurv < 0 , NA),
+                                 `10b_schl_go_age` = replace(`10b_schl_go_age`, `10b_schl_go_age` < 0 , NA),
+                                 `Q20a_schlyrs` = replace(`Q20a_schlyrs`, `Q20a_schlyrs` < 0 , NA),
+                          psurv_yrsschol = as.numeric(cmb_age.Psurv)  - as.numeric(`10b_schl_go_age`)) %>%
+                          mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
+                                 chint_yrsschool = readr::parse_number(Q6a),
+                                 adint_yrsschool = readr::parse_number(Q20a_schlyrs),
+                                 yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
+                                 yrs_school = coalesce(yrs_school, adint_yrsschool))
+
+
+dropvec = c('notes','year','month','day','time_s','time_en','task','filmed','comments','Q2','Q3','3_','4_','7_','13_')
+dim(DF_QTHTKS)
+DF_QTHTKS_mf = DF_QTHTKS %>% dplyr::select(-contains(dropvec))
+dim(DF_QTHTKS_mf)
+
+
+# DF_QTHTKS_mf = DF_QTHTKS %>% select(-c(11,17:20,26:41,43:56,319:510,536:539,557:586,641:716,719:814,820:823,826:991))
+# decided to omit this
+
+#stanlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7,DF8)
+#stanlist = rename.duplicated(stanlist, extensions=c('PIDr','BIO','AKA','HOOK',"HTKS","MMT",'NECKL','PUZZ'), 
+#                                                    ignore=c('PID','location','PID_location'))
+#DF_stan = fast.merge.list(stanlist, by=c('PID','PID_location','location'))
 
 ################################################################
 ### Put all of Tanna in one output file...
@@ -1384,7 +1446,15 @@ library(dplyr)
 #xlsx::write.xlsx(DFEm,paste('DF_SELFREG_TASPMA_MasterFile_',td,sep='','.xlsx'),sheetName="EmilySelfReg_minimaster", row.names = 'FALSE')
 # the above is very very slow. 
 
-xlsx::write.xlsx(DF_stan,paste('DF_StanfordTalk_Master_',td,sep='','.xlsx'),sheetName="StandfordTalk_minimaster",row.names = 'FALSE')
+#xlsx::write.xlsx(DF_stan,paste('DF_StanfordTalk_Master_',td,sep='','.xlsx'),sheetName="StandfordTalk_minimaster",row.names = 'FALSE')
+
+DF_QTHTKS_mf = DF_QTHTKS_mf %>% group_by(location) %>% arrange(as.numeric(age_pid), .by_group = TRUE) %>% ungroup()
+DF_QTHTKS_mf = as.data.frame(DF_QTHTKS_mf)
+# next, need to drop irrelevant columns and 
+
+#xlsx::write.xlsx(DFBruce,paste('DF_OvImHook_TASPMA_MasterFile_',td,sep='','.xlsx'),sheetName="BruceOvIm_minimaster",row.names = 'FALSE')
+xlsx::write.xlsx(DF_QTHTKS_mf,paste('DF_QTHTKS_MasterFile_',td,sep='','.xlsx'),sheetName="QTHTKS_mf",row.names = 'FALSE')
+
 
 #str(DF2)
 #write.csv(DF,paste('Lydia_Data_',td,'.csv'))
@@ -1458,3 +1528,8 @@ warnings()
 # Check.variable(x, name='handed_ball',sheet="Biometric", TREE)
 # 
 # try(Check.variable(x, sheet='PhonoLog',name="PID", TREE))
+
+
+
+
+
