@@ -1,0 +1,80 @@
+********************************************************************************
+log created at: Mon Aug 10 14:02:57 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+NB_SG_ACAKN_16OCT2019.xlsx  :  CHECK !
+NB_SG_BIO_10FEB2020.xlsx  :  OK
+NB_SG_CATVB_30MAR2020.xlsx  :  CHECK !
+NB_SG_CHIKNT_23SEP2019.xlsx  :  CHECK !
+NB_SG_CRGKNT_16SEP2019.xlsx  :  CHECK !
+NB_SG_HKTASK_29JAN2020.xlsx  :  CHECK !
+NB_SG_HTKS_19FEB2020.xlsx  :  OK
+NB_SG_MMT_19FEB2020.xlsx  :  CHECK !
+NB_SG_NCKLOVIM_16OCT2019.xlsx  :  CHECK !
+NB_SG_PHRE_30MAR2020.xlsx  :  CHECK !
+NB_SG_PID_17OCT2019.xlsx  :  OK
+NB_SG_PID_noNames_17OCT2019.xlsx  :  OK
+NB_SG_PZOVIM_16OCT2019.xlsx  :  CHECK !
+NB_SG_QT_13JUL2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+NB_SG_CATVB_30MAR2020.xlsx  :  10
+NB_SG_CHIKNT_23SEP2019.xlsx  :  82
+NB_SG_CRGKNT_16SEP2019.xlsx  :  75
+NB_SG_HKTASK_29JAN2020.xlsx  :  9
+NB_SG_MMT_19FEB2020.xlsx  :  1
+NB_SG_QT_13JUL2020.xlsx  :  2
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+NB_SG_ACAKN_16OCT2019.xlsx :
+Variable Comments is not present in both database and dictionary TREE. Please check spelling.
+Variable Notes is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_CHIKNT_23SEP2019.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_CRGKNT_16SEP2019.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_HKTASK_29JAN2020.xlsx :
+Variable ...14 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_MMT_19FEB2020.xlsx :
+Variable reward_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable reward_2 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_NCKLOVIM_16OCT2019.xlsx :
+Variable Notes is not present in both database and dictionary TREE. Please check spelling.
+Variable string.color is not present in both database and dictionary TREE. Please check spelling.
+Variable lifted.nckl is not present in both database and dictionary TREE. Please check spelling.
+Variable Reset.materials is not present in both database and dictionary TREE. Please check spelling.
+Variable RA.prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable RA.prompt.code is not present in both database and dictionary TREE. Please check spelling.
+Variable Part.question is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_PHRE_30MAR2020.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/iCloudDrive/DataToProcess2/Data Sheets .xls/NB/NB_SG_PHRE_30MAR2020.xlsx
+ 
+--> 
+NB_SG_PZOVIM_16OCT2019.xlsx :
+Variable RESET.MATERIALS is not present in both database and dictionary TREE. Please check spelling.
+Variable RA.PROMPT is not present in both database and dictionary TREE. Please check spelling.
+Variable RA.PROMPT.CODE is not present in both database and dictionary TREE. Please check spelling.
+ 

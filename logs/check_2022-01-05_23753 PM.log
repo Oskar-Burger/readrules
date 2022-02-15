@@ -1,0 +1,27 @@
+********************************************************************************
+log created at: Wed Jan 05 14:37:53 2022
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+AS_SC_CHINT_09APR2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+AS_SC_CHINT_09APR2020.xlsx  :  6
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+AS_SC_CHINT_09APR2020.xlsx :
+Variable Q6 y/n is not present in both database and dictionary TREE. Please check spelling.
+Variable error_count is not present in both database and dictionary TREE. Please check spelling.
+Variable error_loc is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 

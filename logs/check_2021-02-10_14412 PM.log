@@ -1,0 +1,26 @@
+********************************************************************************
+log created at: Wed Feb 10 13:44:12 2021
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+NB_SG_PARTSURV_10FEB2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+NB_SG_PARTSURV_10FEB2020.xlsx  :  9588
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+NB_SG_PARTSURV_10FEB2020.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 

@@ -1,0 +1,78 @@
+********************************************************************************
+log created at: Tue Jul 02 16:23:26 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+MA_GP_ACAKN_19APR2019.xlsx  :  CHECK !
+MA_GP_CATVB_19APR2019.xlsx  :  CHECK !
+MA_GP_HKTASK_02JUL2019.xlsx  :  OK
+MA_GP_HTKS_20AUG2018.xlsx  :  CHECK !
+MA_GP_MMT_19APR2019.xlsx  :  CHECK !
+MA_GP_PZOVIM.xlsx  :  CHECK !
+MA_GP_QT_2018.xlsx  :  CHECK !
+MA_JW_ACAKN_19APR2019.xlsx  :  CHECK !
+MA_JW_BIO_19APR2019.xlsx  :  CHECK !
+MA_JW_CATVB_19APR2019.xlsx  :  OK
+MA_JW_HKTASK_02JUL2019.xlsx  :  OK
+MA_JW_HTKS_24NOV2018.xlsx  :  OK
+MA_JW_MMT_19APR2019.xlsx  :  OK
+MA_JW_PHRE_24NOV2018.xlsx  :  OK
+MA_JW_PID_noNames_27JUN2019.xlsx  :  OK
+MA_JW_PID_registry_24NOV2018.xlsx  :  CHECK !
+MA_JW_PZOVIM_24NOV2018.xlsx  :  CHECK !
+MA_JWGP_NCKLOVIM_02JUL2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+MA_GP_ACAKN_19APR2019.xlsx  :  28
+MA_GP_CATVB_19APR2019.xlsx  :  44
+MA_GP_HTKS_20AUG2018.xlsx  :  1
+MA_GP_MMT_19APR2019.xlsx  :  20
+MA_GP_PZOVIM.xlsx  :  1
+MA_GP_QT_2018.xlsx  :  17
+MA_JW_ACAKN_19APR2019.xlsx  :  1
+MA_JW_BIO_19APR2019.xlsx  :  23
+MA_JW_PZOVIM_24NOV2018.xlsx  :  5
+MA_JWGP_NCKLOVIM_02JUL2019.xlsx  :  159
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+MA_JW_BIO_19APR2019.xlsx :
+Variable seat_height is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_PID_registry_24NOV2018.xlsx :
+Variable Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable ...12 is not present in both database and dictionary TREE. Please check spelling.
+Variable age is not present in both database and dictionary TREE. Please check spelling.
+Variable school is not present in both database and dictionary TREE. Please check spelling.
+Variable biometrics is not present in both database and dictionary TREE. Please check spelling.
+Variable child-int is not present in both database and dictionary TREE. Please check spelling.
+Variable child-knot is not present in both database and dictionary TREE. Please check spelling.
+Variable care-knot is not present in both database and dictionary TREE. Please check spelling.
+Variable chain-knot is not present in both database and dictionary TREE. Please check spelling.
+Variable necklace is not present in both database and dictionary TREE. Please check spelling.
+Variable hook is not present in both database and dictionary TREE. Please check spelling.
+Variable academic is not present in both database and dictionary TREE. Please check spelling.
+Variable puzzle is not present in both database and dictionary TREE. Please check spelling.
+Variable phono is not present in both database and dictionary TREE. Please check spelling.
+Variable marshmallow is not present in both database and dictionary TREE. Please check spelling.
+Variable htks is not present in both database and dictionary TREE. Please check spelling.
+Variable catvb is not present in both database and dictionary TREE. Please check spelling.
+Variable qt is not present in both database and dictionary TREE. Please check spelling.
+Variable notes is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JWGP_NCKLOVIM_02JUL2019.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+ 

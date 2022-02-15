@@ -1,0 +1,213 @@
+********************************************************************************
+log created at: Fri Feb 04 14:21:26 2022
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+AS_SC_ADINT_06AUG2019.xlsx  :  CHECK !
+AS_SC_BIO_24JUL2020.xlsx  :  CHECK !
+AS_SC_CHINT_05JAN2022.xlsx  :  OK
+AS_SC_PID_noNames_17APR2020.xlsx  :  OK
+BA_SP_ADINT_26FEB2020.xlsx  :  CHECK !
+BA_SP_BIO_02MAR2020.xlsx  :  CHECK !
+BA_SP_CHINT_02MAR2020.xlsx  :  CHECK !
+BA_SP_PID_noNames_17FEB2020.xlsx  :  OK
+EC_BR_BIO_01OCT2020.xlsx  :  CHECK !
+EC_BR_PARTSURV_07DEC2020.xlsx  :  CHECK !
+EC_BR_PID_noNames_01OCT2020.xlsx  :  OK
+FA_GI_PARTSURV_25FEB2021.xlsx  :  CHECK !
+FA_GI_PID_noNames_25FEB2021.xlsx  :  OK
+MA_JW_BIO_14FEB2020.xlsx  :  CHECK !
+MA_JW_CHINT_22JAN2020.xlsx  :  CHECK !
+MA_JW_PID_noNames_22JAN2020.xlsx  :  OK
+MM_FF_BIO_13FEB2020.xlsx  :  CHECK !
+MM_FF_PARTSURV_17FEB2020.xlsx  :  CHECK !
+MM_FF_PID_noNames_12FEB2020.xlsx  :  OK
+NB_SG_BIO_27AUG2020.xlsx  :  CHECK !
+NB_SG_PARTSURV_10FEB2020.xlsx  :  CHECK !
+NB_SG_PID_noNames_27AUG2020.xlsx  :  OK
+SC_GI_BIO_20DEC2021.xlsx  :  CHECK !
+SC_GI_PARTSURV_20DEC2021.xlsx  :  CHECK !
+SC_SG_PID_noNames_01FEB2022.xlsx  :  OK
+SP_VD_ADINT_17FEB2020.xlsx  :  OK
+SP_VD_BIO_22JUL2020.xlsx  :  CHECK !
+SP_VD_PID_noNames_31MAR2020.xlsx  :  OK
+SY_MG_BIO_11DEC2020.xlsx  :  CHECK !
+SY_MG_PARTSURV_11DEC2020.xlsx  :  CHECK !
+SY_MG_PID_noNames_11DEC2020.xlsx  :  OK
+TA_EM_ADINT_23JUL2019.xlsx  :  CHECK !
+TA_EM_BIO_13APR2020.xlsx  :  CHECK !
+TA_EM_CHINT_28JAN2020.xlsx  :  CHECK !
+TA_EM_PID_noNames_23JUL2019.xlsx  :  OK
+WA_CW_BIO_23NOV2021.xlsx  :  CHECK !
+WA_CW_PARTSURV_23NOV2021.xlsx  :  CHECK !
+WA_CW_PID_noNames_24NOV2021.xlsx  :  CHECK !
+YP_LS_BIO_15JUL2021.xlsx  :  CHECK !
+YP_LS_PARTSURV_13JUL2021.xlsx  :  CHECK !
+YP_LS_PID_noNames_15JUL2021.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+BA_SP_ADINT_26FEB2020.xlsx  :  1
+EC_BR_PARTSURV_07DEC2020.xlsx  :  1
+NB_SG_PARTSURV_10FEB2020.xlsx  :  10
+SY_MG_PARTSURV_11DEC2020.xlsx  :  1
+WA_CW_PARTSURV_23NOV2021.xlsx  :  1
+YP_LS_PARTSURV_13JUL2021.xlsx  :  26
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+AS_SC_ADINT_06AUG2019.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/AS/AS_SC_ADINT_06AUG2019.xlsx
+ 
+--> 
+AS_SC_BIO_24JUL2020.xlsx :
+Variable error_common is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_ADINT_26FEB2020.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/BA/BA_SP_ADINT_26FEB2020.xlsx
+Variable Q56a_foodcertd is not present in both database and dictionary TREE. Please check spelling.
+Variable Q56b_foodcertmo is not present in both database and dictionary TREE. Please check spelling.
+Variable Q56c_watcertd is not present in both database and dictionary TREE. Please check spelling.
+Variable Q56d_watcertmo is not present in both database and dictionary TREE. Please check spelling.
+Variable ...95 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...102 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...109 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_BIO_02MAR2020.xlsx :
+Variable ...23 is not present in both database and dictionary TREE. Please check spelling.
+Variable error_common is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_CHINT_02MAR2020.xlsx :
+Variable City.of.School is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_BIO_01OCT2020.xlsx :
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_PARTSURV_07DEC2020.xlsx :
+Variable par_check is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable ...279 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...283 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...284 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+FA_GI_PARTSURV_25FEB2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_BIO_14FEB2020.xlsx :
+Variable seat_height is not present in both database and dictionary TREE. Please check spelling.
+Variable error_common is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_CHINT_22JAN2020.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/MA/MA_JW_CHINT_22JAN2020.xlsx
+ 
+--> 
+MM_FF_BIO_13FEB2020.xlsx :
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PARTSURV_17FEB2020.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_BIO_27AUG2020.xlsx :
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_PARTSURV_10FEB2020.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SC_GI_BIO_20DEC2021.xlsx :
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SC_GI_PARTSURV_20DEC2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_BIO_22JUL2020.xlsx :
+Variable error_common is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_BIO_11DEC2020.xlsx :
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_PARTSURV_11DEC2020.xlsx :
+Variable par_check is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable X13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_ADINT_23JUL2019.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/TA/TA_EM_ADINT_23JUL2019.xlsx
+Variable Q16a_foodcertd_tanna is not present in both database and dictionary TREE. Please check spelling.
+Variable Q16b_foodcertmo_tanna is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_BIO_13APR2020.xlsx :
+Variable error_area is not present in both database and dictionary TREE. Please check spelling.
+Variable error_common is not present in both database and dictionary TREE. Please check spelling.
+Variable ...26 is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_CHINT_28JAN2020.xlsx :
+Variable comment is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_BIO_23NOV2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/WA/WA_CW_BIO_23NOV2021.xlsx
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_PARTSURV_23NOV2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_PID_noNames_24NOV2021.xlsx :
+Variable Birth_day is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_month is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_year is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_BIO_15JUL2021.xlsx :
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_PARTSURV_13JUL2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_PID_noNames_15JUL2021.xlsx :
+Variable Birth_day is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_month is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_year is not present in both database and dictionary TREE. Please check spelling.
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+ 

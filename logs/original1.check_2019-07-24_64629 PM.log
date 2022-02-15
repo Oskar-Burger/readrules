@@ -1,0 +1,84 @@
+********************************************************************************
+log created at: Wed Jul 24 18:46:29 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+AS_SC_HTKS_03MAR2019.xlsx  :  OK
+BA_SP_HTKS_15JUL2019.xlsx  :  CHECK !
+MA_JW_HTKS_24NOV2018.xlsx  :  OK
+MM_FF_HTKS_08JUL2019.xlsx  :  OK
+TA_EM_HTKS_22JUL2019.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+BA_SP_HTKS_15JUL2019.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_id is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_day is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_month is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_year is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr is not present in both database and dictionary TREE. Please check spelling.
+Variable corrections_pr_i is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr is not present in both database and dictionary TREE. Please check spelling.
+Variable corrections_pr_ii is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr is not present in both database and dictionary TREE. Please check spelling.
+Variable corrections_pr_iii is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_10 is not present in both database and dictionary TREE. Please check spelling.
+ 

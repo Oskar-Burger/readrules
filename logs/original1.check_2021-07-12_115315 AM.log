@@ -1,0 +1,85 @@
+********************************************************************************
+log created at: Mon Jul 12 11:53:15 2021
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+YP_LS_BIO_28AUG2020.xlsx  :  CHECK !
+YP_LS_CHIKNT_20APR2020.xlsx  :  CHECK !
+YP_LS_CRGKNT_16APR2020.xlsx  :  CHECK !
+YP_LS_HKTASK_11FEB2020.xlsx  :  CHECK !
+YP_LS_HTKS_23JUN2020.xlsx  :  OK
+YP_LS_MMT_11MAR2020.xlsx  :  CHECK !
+YP_LS_NCKLOVIM_23MAR2020.xlsx  :  CHECK !
+YP_LS_PARTSURV_06JUL2021.xlsx  :  CHECK !
+YP_LS_PID_noNames_09JUL2021.xlsx  :  CHECK !
+YP_LS_PZOVIM_23MAR2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+YP_LS_BIO_28AUG2020.xlsx  :  41
+YP_LS_CHIKNT_20APR2020.xlsx  :  2
+YP_LS_CRGKNT_16APR2020.xlsx  :  14
+YP_LS_HKTASK_11FEB2020.xlsx  :  46
+YP_LS_MMT_11MAR2020.xlsx  :  41
+YP_LS_PARTSURV_06JUL2021.xlsx  :  101
+YP_LS_PZOVIM_23MAR2020.xlsx  :  1
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+YP_LS_CHIKNT_20APR2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_CRGKNT_16APR2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_NCKLOVIM_23MAR2020.xlsx :
+Variable blu_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_final_seq is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_final_seq is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_PARTSURV_06JUL2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_PID_noNames_09JUL2021.xlsx :
+Variable Birth_day is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_month is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_year is not present in both database and dictionary TREE. Please check spelling.
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+Variable today is not present in both database and dictionary TREE. Please check spelling.
+Variable newage is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+YP_LS_PZOVIM_23MAR2020.xlsx :
+Variable puzzlebox_first is not present in both database and dictionary TREE. Please check spelling.
+ 

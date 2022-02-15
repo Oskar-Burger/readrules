@@ -1,0 +1,35 @@
+********************************************************************************
+log created at: Thu Dec 09 14:31:09 2021
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+SC_GI_BIO_07DEC2021.xlsx  :  CHECK !
+SC_GI_PARTSURV_21OCT2021.xlsx  :  CHECK !
+SC_GI_PID_07DEC2021.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+SC_GI_BIO_07DEC2021.xlsx  :  102
+SC_GI_PARTSURV_21OCT2021.xlsx  :  3
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+SC_GI_PARTSURV_21OCT2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SC_GI_PID_07DEC2021.xlsx :
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Comments is not present in both database and dictionary TREE. Please check spelling.
+ 

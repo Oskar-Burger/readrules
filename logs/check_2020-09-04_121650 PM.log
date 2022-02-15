@@ -1,0 +1,97 @@
+********************************************************************************
+log created at: Fri Sep 04 12:16:50 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+EC_BR_ACAKN_19FEB2020.xlsx  :  CHECK !
+EC_BR_BIO_31AUG2020.xlsx  :  OK
+EC_BR_CATVB_27FEB2020.xlsx  :  CHECK !
+EC_BR_CHIKNT_31AUG2020.xlsx  :  CHECK !
+EC_BR_CRGKNT_31AUG2020.xlsx  :  CHECK !
+EC_BR_HKTASK_31AUG2020.xlsx  :  CHECK !
+EC_BR_HTKS_19FEB2020.xlsx  :  OK
+EC_BR_MMT_31AUG2020.xlsx  :  CHECK !
+EC_BR_NCKLOVIM_31AUG2020.xlsx  :  CHECK !
+EC_BR_PARTSURV_13AUG2020.xlsx  :  CHECK !
+EC_BR_PID_25AUG2020.xlsx  :  CHECK !
+EC_BR_PID_noNames_02SEP2020.xlsx  :  OK
+EC_BR_PZOVIM_31AUG2020.xlsx  :  OK
+EC_BR_QT_06JAN2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+EC_BR_ACAKN_19FEB2020.xlsx  :  1
+EC_BR_CATVB_27FEB2020.xlsx  :  78
+EC_BR_CHIKNT_31AUG2020.xlsx  :  16
+EC_BR_CRGKNT_31AUG2020.xlsx  :  2
+EC_BR_HKTASK_31AUG2020.xlsx  :  1
+EC_BR_MMT_31AUG2020.xlsx  :  1
+EC_BR_PARTSURV_13AUG2020.xlsx  :  26
+EC_BR_QT_06JAN2020.xlsx  :  257
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+EC_BR_ACAKN_19FEB2020.xlsx :
+Variable ...6 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_CHIKNT_31AUG2020.xlsx :
+Variable knot_exp_teacher_details is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_exp_student_details is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_CRGKNT_31AUG2020.xlsx :
+Variable knot_exp_teacher_details is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_exp_student_details is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_HKTASK_31AUG2020.xlsx :
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable Score_change is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_MMT_31AUG2020.xlsx :
+Variable reward_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable reward_2 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_NCKLOVIM_31AUG2020.xlsx :
+Variable PID is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_final_seq is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_final_seq is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_PARTSURV_13AUG2020.xlsx :
+Variable par_check is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_PID_25AUG2020.xlsx :
+Variable location is not present in both database and dictionary TREE. Please check spelling.
+ 

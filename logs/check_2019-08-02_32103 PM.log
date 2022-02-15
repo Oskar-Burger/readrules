@@ -1,0 +1,46 @@
+********************************************************************************
+log created at: Fri Aug 02 15:21:03 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+SP_VD_ACAKN_02JUL2019.xlsx  :  OK
+SP_VD_ADINT_02AUG2019.xlsx  :  OK
+SP_VD_BIO_01AUG2019.xlsx  :  OK
+SP_VD_CATVB_11JUL2019.xlsx  :  OK
+SP_VD_CHIKNT_09JUL2019.xlsx  :  OK
+SP_VD_CHINT_01AUG2019.xlsx  :  CHECK !
+SP_VD_CKNTTH_11JUL2019.xlsx  :  OK
+SP_VD_CRGKNT_09JUL2019.xlsx  :  OK
+SP_VD_HKTASK_09JUL2019.xlsx  :  OK
+SP_VD_HTKS_24JUL2019.xlsx  :  OK
+SP_VD_MMT_01AUG2019.xlsx  :  OK
+SP_VD_NCKLOVIM_08AUG2019.xlsx  :  OK
+SP_VD_PHRE_02JUL2019.xlsx  :  OK
+SP_VD_PID_02AUG2019.xlsx  :  CHECK !
+SP_VD_PID_noNames_02AUG2019.xlsx  :  OK
+SP_VD_PUZZLEBOX_02JUL2019.xlsx  :  OK
+SP_VD_QT_02JUL2019.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+SP_VD_CHINT_01AUG2019.xlsx :
+Variable Q6.y.n is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_PID_02AUG2019.xlsx :
+Variable L.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 

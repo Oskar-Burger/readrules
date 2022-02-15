@@ -1,0 +1,148 @@
+********************************************************************************
+log created at: Mon Feb 17 18:08:04 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+BA_SP_ACAKN_17FEB2020.xlsx  :  OK
+BA_SP_ADINT_17FEB2020.xlsx  :  CHECK !
+BA_SP_BIO_17FEB2020.xlsx  :  OK
+BA_SP_CHINT_17FEB2020.xlsx  :  CHECK !
+BA_SP_CHKNT_17JUL2019.xlsx  :  CHECK !
+BA_SP_CRGKNT_17JUL2019.xlsx  :  CHECK !
+BA_SP_HKTASK_17FEB2020.xlsx  :  CHECK !
+BA_SP_HTKS_15JUL2019.xlsx  :  CHECK !
+BA_SP_NCKLOVIM_17FEB2020.xlsx  :  CHECK !
+BA_SP_PID_17FEB2020.xlsx  :  CHECK !
+BA_SP_PID_noNames_17FEB2020.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+BA_SP_ADINT_17FEB2020.xlsx  :  5
+BA_SP_PID_17FEB2020.xlsx  :  21
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+BA_SP_ADINT_17FEB2020.xlsx :
+Variable Q3_job_comments.. is not present in both database and dictionary TREE. Please check spelling.
+Variable ...95 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...102 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...109 is not present in both database and dictionary TREE. Please check spelling.
+Variable Q2_8_read is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_CHINT_17FEB2020.xlsx :
+Variable Q6.y.n is not present in both database and dictionary TREE. Please check spelling.
+Variable City.of.School is not present in both database and dictionary TREE. Please check spelling.
+Variable Handedness is not present in both database and dictionary TREE. Please check spelling.
+Variable Notes is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_CHKNT_17JUL2019.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Box/DataToProcess2/Data Sheets .xls/BA/BA_SP_CHKNT_17JUL2019.xlsx
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_CRGKNT_17JUL2019.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Box/DataToProcess2/Data Sheets .xls/BA/BA_SP_CRGKNT_17JUL2019.xlsx
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+Variable comments1 is not present in both database and dictionary TREE. Please check spelling.
+Variable comments2 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_HKTASK_17FEB2020.xlsx :
+Variable start.time is not present in both database and dictionary TREE. Please check spelling.
+Variable end.time is not present in both database and dictionary TREE. Please check spelling.
+Variable time.of.success is not present in both database and dictionary TREE. Please check spelling.
+Variable notes is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_HTKS_15JUL2019.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_id is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_day is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_month is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_year is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_pr is not present in both database and dictionary TREE. Please check spelling.
+Variable corrections_pr_i is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_i_te_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_pr is not present in both database and dictionary TREE. Please check spelling.
+Variable corrections_pr_ii is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_ii_te_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_pr is not present in both database and dictionary TREE. Please check spelling.
+Variable corrections_pr_iii is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable part_iii_te_10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_NCKLOVIM_17FEB2020.xlsx :
+Variable ...52 is not present in both database and dictionary TREE. Please check spelling.
+Variable comments1 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...54 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...55 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_PID_17FEB2020.xlsx :
+Variable Household.ID is not present in both database and dictionary TREE. Please check spelling.
+Variable L.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Did.Tasks.Interview is not present in both database and dictionary TREE. Please check spelling.
+Variable Position.in.Household is not present in both database and dictionary TREE. Please check spelling.
+Variable Lives.in.House is not present in both database and dictionary TREE. Please check spelling.
+Variable Lives.in.Djoube is not present in both database and dictionary TREE. Please check spelling.
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Husband is not present in both database and dictionary TREE. Please check spelling.
+Variable Wife is not present in both database and dictionary TREE. Please check spelling.
+Variable Notes is not present in both database and dictionary TREE. Please check spelling.
+ 

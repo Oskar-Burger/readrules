@@ -1,0 +1,65 @@
+********************************************************************************
+log created at: Tue Jul 02 14:57:30 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+AS_SC_ADINT_24JUN2019.xlsx  :  CHECK !
+AS_SC_BIO_28FEB2019.xlsx  :  CHECK !
+AS_SC_CATVB_19FEB2019.xlsx  :  OK
+AS_SC_HKTASK_02JUL2019.xlsx  :  OK
+AS_SC_HTKS_3MAR2019.xlsx  :  OK
+AS_SC_MMT_19FEB2019.xlsx  :  OK
+AS_SC_NCKLOVIM_02JUL2019.xlsx  :  CHECK !
+AS_SC_PHRE_19FEB2019.xlsx  :  OK
+AS_SC_PID_02JUL2019.xlsx  :  CHECK !
+AS_SC_PID_noNames_01JUL2019.xlsx  :  CHECK !
+AS_SC_PZOVIM_28FEB2019.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+AS_SC_ADINT_24JUN2019.xlsx  :  231
+AS_SC_BIO_28FEB2019.xlsx  :  4
+AS_SC_NCKLOVIM_02JUL2019.xlsx  :  193
+AS_SC_PID_noNames_01JUL2019.xlsx  :  2
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+AS_SC_ADINT_24JUN2019.xlsx :
+Variable Q1_sub_age_text is not present in both database and dictionary TREE. Please check spelling.
+Variable Q3_job_comments
+ is not present in both database and dictionary TREE. Please check spelling.
+Variable comments5 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+AS_SC_BIO_28FEB2019.xlsx :
+Variable Height_stand_cm is not present in both database and dictionary TREE. Please check spelling.
+Variable height_sit_cm is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+AS_SC_NCKLOVIM_02JUL2019.xlsx :
+Variable ...2 is not present in both database and dictionary TREE. Please check spelling.
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable missing is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+AS_SC_PID_02JUL2019.xlsx :
+Variable L_Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F_Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable bio_sex is not present in both database and dictionary TREE. Please check spelling.
+Variable bio_age is not present in both database and dictionary TREE. Please check spelling.
+Variable Original_PID_Sex is not present in both database and dictionary TREE. Please check spelling.
+Variable Sex_Changed_from_OG is not present in both database and dictionary TREE. Please check spelling.
+Variable Original_PID_dob is not present in both database and dictionary TREE. Please check spelling.
+Variable New_Birth_year is not present in both database and dictionary TREE. Please check spelling.
+Variable DOB_Changed_from_OG is not present in both database and dictionary TREE. Please check spelling.
+ 

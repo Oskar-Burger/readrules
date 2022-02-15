@@ -1,0 +1,83 @@
+********************************************************************************
+log created at: Fri Nov 20 15:33:49 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+SY_MG_ACAKN_20NOV2020.xlsx  :  CHECK !
+SY_MG_BIO_20NOV2020.xlsx  :  OK
+SY_MG_CATVB_20NOV2020.xlsx  :  OK
+SY_MG_CHIKNT_20NOV2020.xlsx  :  CHECK !
+SY_MG_HKTASK_20NOV2020.xlsx  :  CHECK !
+SY_MG_HTKS_20NOV2020.xlsx  :  OK
+SY_MG_MMT_07MAR20.xlsx  :  CHECK !
+SY_MG_NCKOVIM_20NOV2020.xlsx  :  CHECK !
+SY_MG_PARTSURV_20NOV2020.xlsx  :  CHECK !
+SY_MG_PID_22JUN2020.xlsx  :  CHECK !
+SY_MG_PID_noNames_20NOV2020.xlsx  :  CHECK !
+SY_MG_PZOVIM_20NOV2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+SY_MG_CHIKNT_20NOV2020.xlsx  :  24
+SY_MG_HKTASK_20NOV2020.xlsx  :  2
+SY_MG_MMT_07MAR20.xlsx  :  1
+SY_MG_PARTSURV_20NOV2020.xlsx  :  12
+SY_MG_PID_22JUN2020.xlsx  :  2
+SY_MG_PZOVIM_20NOV2020.xlsx  :  2
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+SY_MG_ACAKN_20NOV2020.xlsx :
+Variable time_start is not present in both database and dictionary TREE. Please check spelling.
+Variable time_end is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_NCKOVIM_20NOV2020.xlsx :
+Variable blu_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_final_seq is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_final_seq is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_PARTSURV_20NOV2020.xlsx :
+Variable par_check is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_PID_22JUN2020.xlsx :
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Location is not present in both database and dictionary TREE. Please check spelling.
+Variable Other… is not present in both database and dictionary TREE. Please check spelling.
+Variable ...14 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...15 is not present in both database and dictionary TREE. Please check spelling.
+Variable ...16 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_PID_noNames_20NOV2020.xlsx :
+Variable age_listed is not present in both database and dictionary TREE. Please check spelling.
+ 

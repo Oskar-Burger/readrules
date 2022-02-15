@@ -1,0 +1,298 @@
+********************************************************************************
+log created at: Fri Aug 09 14:08:12 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+MA_JW_ACAKN_08AUG2019.xlsx  :  OK
+MA_JW_BIO_08AUG2019.xlsx  :  CHECK !
+MA_JW_CATVB_08AUG2019.xlsx  :  OK
+MA_JW_CHINT_19APR2019.xlsx  :  CHECK !
+MA_JW_HKTASK_08AUG2019.xlsx  :  OK
+MA_JW_HTKS_08AUG2018.xlsx  :  CHECK !
+MA_JW_MMT_08AUG2019.xlsx  :  OK
+MA_JW_NCKLOVIM_15JUL2019.xlsx  :  CHECK !
+MA_JW_PHRE_08AUG2019.xlsx  :  OK
+MA_JW_PZOVIM_08AUG2019.xlsx  :  CHECK !
+MA_JWGP_PID_noNames_08AUG2019.xlsx  :  OK
+MM_FF_ACAKN_12JUL2019.xlsx  :  CHECK !
+MM_FF_BIO_03JUN2019.xlsx  :  CHECK !
+MM_FF_CATVB_15JUL2019.xlsx  :  CHECK !
+MM_FF_CHIKNT_16JUL2019.xlsx  :  CHECK !
+MM_FF_CKNTTH_17JUL2019.xlsx  :  CHECK !
+MM_FF_CRGKT_15JUL2019.xlsx  :  CHECK !
+MM_FF_HKTASK_17JUL2019.xlsx  :  CHECK !
+MM_FF_HTKS_08JUL2019.xlsx  :  OK
+MM_FF_MMT_19JUL2019.xlsx  :  CHECK !
+MM_FF_NCKLOVIM_16JUL2019.xlsx  :  OK
+MM_FF_PARTSURV_24JUL2019.xlsx  :  CHECK !
+MM_FF_PHRE_09JUL2019.xlsx  :  OK
+MM_FF_PID_25JUL2019.xlsx  :  CHECK !
+MM_FF_PZOVIM_03JUL2019.xlsx  :  OK
+MM_FF_QT_11JUL2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+MA_JW_BIO_08AUG2019.xlsx  :  25
+MA_JW_HTKS_08AUG2018.xlsx  :  1
+MA_JW_NCKLOVIM_15JUL2019.xlsx  :  5
+MM_FF_ACAKN_12JUL2019.xlsx  :  2
+MM_FF_BIO_03JUN2019.xlsx  :  1127
+MM_FF_CATVB_15JUL2019.xlsx  :  122
+MM_FF_CKNTTH_17JUL2019.xlsx  :  35
+MM_FF_CRGKT_15JUL2019.xlsx  :  4
+MM_FF_HKTASK_17JUL2019.xlsx  :  56
+MM_FF_MMT_19JUL2019.xlsx  :  3
+MM_FF_PARTSURV_24JUL2019.xlsx  :  151
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+MA_JW_BIO_08AUG2019.xlsx :
+Variable seat_height is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_CHINT_19APR2019.xlsx :
+Variable Q6.y.n is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_NCKLOVIM_15JUL2019.xlsx :
+Variable ...52 is not present in both database and dictionary TREE. Please check spelling.
+Variable task comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_PZOVIM_08AUG2019.xlsx :
+Variable PID_student is not present in both database and dictionary TREE. Please check spelling.
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable num_other_box_taps is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_uk is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable background is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_eyes_inview is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_BIO_03JUN2019.xlsx :
+Expecting numeric in H2 / R2C8: got a date
+Expecting numeric in H3 / R3C8: got a date
+Expecting numeric in H4 / R4C8: got a date
+Expecting numeric in H5 / R5C8: got a date
+Expecting numeric in H6 / R6C8: got a date
+Expecting numeric in H7 / R7C8: got a date
+Expecting numeric in H8 / R8C8: got a date
+Expecting numeric in H9 / R9C8: got a date
+Expecting numeric in H10 / R10C8: got a date
+Expecting numeric in H11 / R11C8: got a date
+Expecting numeric in H12 / R12C8: got a date
+Expecting numeric in H13 / R13C8: got a date
+Expecting numeric in H14 / R14C8: got a date
+Expecting numeric in H15 / R15C8: got a date
+Expecting numeric in H16 / R16C8: got a date
+Expecting numeric in H17 / R17C8: got a date
+Expecting numeric in H18 / R18C8: got a date
+Expecting numeric in H19 / R19C8: got a date
+Expecting numeric in H20 / R20C8: got a date
+Expecting numeric in H21 / R21C8: got a date
+Expecting numeric in H22 / R22C8: got a date
+Expecting numeric in H23 / R23C8: got a date
+Expecting numeric in H24 / R24C8: got a date
+Expecting numeric in H25 / R25C8: got a date
+Expecting numeric in H26 / R26C8: got a date
+Expecting numeric in H27 / R27C8: got a date
+Expecting numeric in H28 / R28C8: got a date
+Expecting numeric in H29 / R29C8: got a date
+Expecting numeric in H30 / R30C8: got a date
+Expecting numeric in H31 / R31C8: got a date
+Expecting numeric in H32 / R32C8: got a date
+Expecting numeric in H33 / R33C8: got a date
+Expecting numeric in H34 / R34C8: got a date
+Expecting numeric in H35 / R35C8: got a date
+Expecting numeric in H36 / R36C8: got a date
+Expecting numeric in H37 / R37C8: got a date
+Expecting numeric in H38 / R38C8: got a date
+Expecting numeric in H39 / R39C8: got a date
+Expecting numeric in H40 / R40C8: got a date
+Expecting numeric in H41 / R41C8: got a date
+Expecting numeric in H42 / R42C8: got a date
+Expecting numeric in H43 / R43C8: got a date
+Expecting numeric in H44 / R44C8: got a date
+Expecting numeric in H45 / R45C8: got a date
+Expecting numeric in H46 / R46C8: got a date
+Expecting numeric in H47 / R47C8: got a date
+Expecting numeric in H48 / R48C8: got a date
+Expecting numeric in H49 / R49C8: got a date
+Expecting numeric in H50 / R50C8: got a date
+Expecting numeric in H51 / R51C8: got a date
+Expecting numeric in H52 / R52C8: got a date
+Expecting numeric in H53 / R53C8: got a date
+Expecting numeric in H54 / R54C8: got a date
+Expecting numeric in H55 / R55C8: got a date
+Expecting numeric in H56 / R56C8: got a date
+Expecting numeric in H57 / R57C8: got a date
+Expecting numeric in H58 / R58C8: got a date
+Expecting numeric in H59 / R59C8: got a date
+Expecting numeric in H60 / R60C8: got a date
+Expecting numeric in H61 / R61C8: got a date
+Expecting numeric in H62 / R62C8: got a date
+Expecting numeric in H63 / R63C8: got a date
+Expecting numeric in H64 / R64C8: got a date
+Expecting numeric in H65 / R65C8: got a date
+Expecting numeric in H66 / R66C8: got a date
+Expecting numeric in H67 / R67C8: got a date
+Expecting numeric in H68 / R68C8: got a date
+Expecting numeric in H69 / R69C8: got a date
+Expecting numeric in H70 / R70C8: got a date
+Expecting numeric in H71 / R71C8: got a date
+Expecting numeric in H72 / R72C8: got a date
+Expecting numeric in H73 / R73C8: got a date
+Expecting numeric in H74 / R74C8: got a date
+Expecting numeric in H75 / R75C8: got a date
+Expecting numeric in H76 / R76C8: got a date
+Expecting numeric in H77 / R77C8: got a date
+Expecting numeric in H78 / R78C8: got a date
+Expecting numeric in H79 / R79C8: got a date
+Expecting numeric in H80 / R80C8: got a date
+Expecting numeric in H81 / R81C8: got a date
+Expecting numeric in H82 / R82C8: got a date
+Expecting numeric in H83 / R83C8: got a date
+Expecting numeric in H84 / R84C8: got a date
+Expecting numeric in H85 / R85C8: got a date
+Expecting numeric in H86 / R86C8: got a date
+Expecting numeric in H87 / R87C8: got a date
+Expecting numeric in H88 / R88C8: got a date
+Expecting numeric in H89 / R89C8: got a date
+Expecting numeric in H90 / R90C8: got a date
+Expecting numeric in H91 / R91C8: got a date
+Expecting numeric in H92 / R92C8: got a date
+Expecting numeric in H93 / R93C8: got a date
+Expecting numeric in H94 / R94C8: got a date
+Expecting numeric in H95 / R95C8: got a date
+Expecting numeric in H96 / R96C8: got a date
+Expecting numeric in H97 / R97C8: got a date
+Expecting numeric in H98 / R98C8: got a date
+Expecting numeric in H99 / R99C8: got a date
+Expecting numeric in H100 / R100C8: got a date
+Expecting numeric in H101 / R101C8: got a date
+Expecting numeric in H102 / R102C8: got a date
+Expecting numeric in H103 / R103C8: got a date
+Expecting numeric in H104 / R104C8: got a date
+Expecting numeric in H105 / R105C8: got a date
+Expecting numeric in H106 / R106C8: got a date
+Expecting numeric in H107 / R107C8: got a date
+Expecting numeric in H108 / R108C8: got a date
+Expecting numeric in H109 / R109C8: got a date
+Expecting numeric in H110 / R110C8: got a date
+Expecting numeric in H111 / R111C8: got a date
+Expecting numeric in H112 / R112C8: got a date
+Expecting numeric in H113 / R113C8: got a date
+Expecting numeric in H114 / R114C8: got a date
+Expecting numeric in H115 / R115C8: got a date
+Expecting numeric in H116 / R116C8: got a date
+Expecting numeric in H117 / R117C8: got a date
+Expecting numeric in H118 / R118C8: got a date
+Expecting numeric in H119 / R119C8: got a date
+Expecting numeric in H120 / R120C8: got a date
+Expecting numeric in H121 / R121C8: got a date
+Expecting numeric in H122 / R122C8: got a date
+Expecting numeric in H123 / R123C8: got a date
+Expecting numeric in H124 / R124C8: got a date
+Expecting numeric in H125 / R125C8: got a date
+Expecting numeric in H126 / R126C8: got a date
+Expecting numeric in H127 / R127C8: got a date
+Expecting numeric in H128 / R128C8: got a date
+Expecting numeric in H129 / R129C8: got a date
+Expecting numeric in H130 / R130C8: got a date
+Expecting numeric in H131 / R131C8: got a date
+Expecting numeric in H132 / R132C8: got a date
+Expecting numeric in H133 / R133C8: got a date
+Expecting numeric in H134 / R134C8: got a date
+Expecting numeric in H135 / R135C8: got a date
+Expecting numeric in H136 / R136C8: got a date
+Expecting numeric in H137 / R137C8: got a date
+Expecting numeric in H138 / R138C8: got a date
+Expecting numeric in H139 / R139C8: got a date
+Expecting numeric in H145 / R145C8: got a date
+Expecting numeric in H146 / R146C8: got a date
+Expecting numeric in H147 / R147C8: got a date
+Expecting numeric in H148 / R148C8: got a date
+Expecting numeric in H149 / R149C8: got a date
+Expecting numeric in H150 / R150C8: got a date
+Expecting numeric in H151 / R151C8: got a date
+Expecting numeric in H152 / R152C8: got a date
+Expecting numeric in H153 / R153C8: got a date
+Expecting numeric in H154 / R154C8: got a date
+Expecting numeric in H155 / R155C8: got a date
+Expecting numeric in H156 / R156C8: got a date
+Expecting numeric in H157 / R157C8: got a date
+Variable pregnant is not present in both database and dictionary TREE. Please check spelling.
+Variable handed_draw is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CHIKNT_16JUL2019.xlsx :
+Variable relationship_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_time_ student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CKNTTH_17JUL2019.xlsx :
+Variable knot_success _teacher is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_success_student is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_time_teacher is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_time_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PARTSURV_24JUL2019.xlsx :
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable ii_children_consent is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PID_25JUL2019.xlsx :
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_QT_11JUL2019.xlsx :
+Variable passa_1_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_2_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_3_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_4_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_5_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_6_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_7_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_1_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_2_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_3_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_4_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_5_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_6_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_7_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_8_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_9_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_10_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_11_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_12_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_13_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_14_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_15_time is not present in both database and dictionary TREE. Please check spelling.
+ 

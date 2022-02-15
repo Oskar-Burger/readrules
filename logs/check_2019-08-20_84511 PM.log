@@ -1,0 +1,146 @@
+********************************************************************************
+log created at: Tue Aug 20 20:45:11 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+MA_JW_ACAKN_08AUG2019.xlsx  :  OK
+MA_JW_BIO_08AUG2019.xlsx  :  CHECK !
+MA_JW_CATVB_08AUG2019.xlsx  :  OK
+MA_JW_CHINT_19APR2019.xlsx  :  CHECK !
+MA_JW_HKTASK_08AUG2019.xlsx  :  OK
+MA_JW_HTKS_08AUG2018.xlsx  :  CHECK !
+MA_JW_MMT_08AUG2019.xlsx  :  OK
+MA_JW_NCKLOVIM_15JUL2019.xlsx  :  CHECK !
+MA_JW_PHRE_08AUG2019.xlsx  :  OK
+MA_JW_PZOVIM_08AUG2019.xlsx  :  CHECK !
+MA_JWGP_PID_noNames_08AUG2019.xlsx  :  OK
+MM_FF_ACAKN_12JUL2019.xlsx  :  CHECK !
+MM_FF_BIO_03JUN2019.xlsx  :  CHECK !
+MM_FF_CATVB_15JUL2019.xlsx  :  CHECK !
+MM_FF_CHIKNT_16JUL2019.xlsx  :  CHECK !
+MM_FF_CKNTTH_17JUL2019.xlsx  :  CHECK !
+MM_FF_CRGKT_15JUL2019.xlsx  :  CHECK !
+MM_FF_HKTASK_17JUL2019.xlsx  :  CHECK !
+MM_FF_HTKS_08JUL2019.xlsx  :  OK
+MM_FF_MMT_19JUL2019.xlsx  :  CHECK !
+MM_FF_NCKLOVIM_16JUL2019.xlsx  :  OK
+MM_FF_PARTSURV_24JUL2019.xlsx  :  CHECK !
+MM_FF_PHRE_09JUL2019.xlsx  :  OK
+MM_FF_PID_25JUL2019.xlsx  :  CHECK !
+MM_FF_PZOVIM_03JUL2019.xlsx  :  OK
+MM_FF_QT_11JUL2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+MA_JW_BIO_08AUG2019.xlsx  :  25
+MA_JW_HTKS_08AUG2018.xlsx  :  1
+MA_JW_NCKLOVIM_15JUL2019.xlsx  :  5
+MM_FF_ACAKN_12JUL2019.xlsx  :  2
+MM_FF_CATVB_15JUL2019.xlsx  :  122
+MM_FF_CKNTTH_17JUL2019.xlsx  :  35
+MM_FF_CRGKT_15JUL2019.xlsx  :  4
+MM_FF_HKTASK_17JUL2019.xlsx  :  56
+MM_FF_MMT_19JUL2019.xlsx  :  3
+MM_FF_PARTSURV_24JUL2019.xlsx  :  151
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+MA_JW_BIO_08AUG2019.xlsx :
+Variable seat_height is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_CHINT_19APR2019.xlsx :
+Variable Q6.y.n is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_NCKLOVIM_15JUL2019.xlsx :
+Variable ...52 is not present in both database and dictionary TREE. Please check spelling.
+Variable task comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_PZOVIM_08AUG2019.xlsx :
+Variable PID_student is not present in both database and dictionary TREE. Please check spelling.
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable num_other_box_taps is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_uk is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable background is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_eyes_inview is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_BIO_03JUN2019.xlsx :
+Variable pregnant is not present in both database and dictionary TREE. Please check spelling.
+Variable handed_draw is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CHIKNT_16JUL2019.xlsx :
+Variable relationship_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_time_ student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CKNTTH_17JUL2019.xlsx :
+Variable knot_success _teacher is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_success_student is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_time_teacher is not present in both database and dictionary TREE. Please check spelling.
+Variable knot_time_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PARTSURV_24JUL2019.xlsx :
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable ii_children_consent is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PID_25JUL2019.xlsx :
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_QT_11JUL2019.xlsx :
+Variable passa_1_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_2_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_3_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_4_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_5_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_6_time is not present in both database and dictionary TREE. Please check spelling.
+Variable passa_7_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_1_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_2_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_3_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_4_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_5_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_6_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_7_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_8_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_9_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_10_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_11_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_12_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_13_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_14_time is not present in both database and dictionary TREE. Please check spelling.
+Variable patt_15_time is not present in both database and dictionary TREE. Please check spelling.
+ 

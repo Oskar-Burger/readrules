@@ -1,0 +1,98 @@
+********************************************************************************
+log created at: Thu Nov 18 14:17:33 2021
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+WA_CW_ACAKN_02JUL2020.xlsx  :  CHECK !
+WA_CW_BIO_11AUG2021.xlsx  :  CHECK !
+WA_CW_CATVB_30JUN2020.xlsx  :  CHECK !
+WA_CW_CHIKNT_24SEP2021.xlsx  :  CHECK !
+WA_CW_CRGKNT_11JUN2020.xlsx  :  CHECK !
+WA_CW_HKTASK_05JUN2020.xlsx  :  CHECK !
+WA_CW_HTKS_24JUN2020.xlsx  :  CHECK !
+WA_CW_MMT_08OCT2021.xlsx  :  OK
+WA_CW_NCKLOVIM_08OCT2021.xlsx  :  CHECK !
+WA_CW_PARTSURV_01JUL2021.xlsx  :  CHECK !
+WA_CW_PID_08OCT2021.xlsx  :  CHECK !
+WA_CW_PID_noNames_18NOV2021.xlsx  :  CHECK !
+WA_CW_PZOVIM_27SEP2021.xlsx  :  OK
+WA_CW_QT_10JUN2021.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+WA_CW_ACAKN_02JUL2020.xlsx  :  2
+WA_CW_BIO_11AUG2021.xlsx  :  1
+WA_CW_CATVB_30JUN2020.xlsx  :  11
+WA_CW_CHIKNT_24SEP2021.xlsx  :  68
+WA_CW_CRGKNT_11JUN2020.xlsx  :  136
+WA_CW_HKTASK_05JUN2020.xlsx  :  2
+WA_CW_HTKS_24JUN2020.xlsx  :  2
+WA_CW_PARTSURV_01JUL2021.xlsx  :  62
+WA_CW_PID_08OCT2021.xlsx  :  1
+WA_CW_QT_10JUN2021.xlsx  :  24
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+WA_CW_ACAKN_02JUL2020.xlsx :
+Variable time_start is not present in both database and dictionary TREE. Please check spelling.
+Variable time_end is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_CATVB_30JUN2020.xlsx :
+Variable exp is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_NCKLOVIM_08OCT2021.xlsx :
+Variable first_necklace is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_final_seq is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_final_seq is not present in both database and dictionary TREE. Please check spelling.
+Variable blue_str_strch is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_PARTSURV_01JUL2021.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_PID_08OCT2021.xlsx :
+Variable L Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Age_ppt_tracker is not present in both database and dictionary TREE. Please check spelling.
+Variable Age_class is not present in both database and dictionary TREE. Please check spelling.
+Variable Community is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_PID_noNames_18NOV2021.xlsx :
+Variable Birth_day is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_month is not present in both database and dictionary TREE. Please check spelling.
+Variable Birth_year is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_QT_10JUN2021.xlsx :
+Variable General Comments is not present in both database and dictionary TREE. Please check spelling.
+ 

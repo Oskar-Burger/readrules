@@ -1,0 +1,97 @@
+********************************************************************************
+log created at: Tue Jul 02 12:16:44 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+SP_VD_ACAKN_02JUL2019.xlsx  :  OK
+SP_VD_ADINT _26OCT2018.xlsx  :  CHECK !
+SP_VD_BIO_09APR2019.xlsx  :  CHECK !
+SP_VD_CATVB_19APR2019.xlsx  :  CHECK !
+SP_VD_CHIKNT_19APR2019.xlsx  :  CHECK !
+SP_VD_CHINT_04APR2019.xlsx  :  CHECK !
+SP_VD_CKNTTH_05APR2019.xlsx  :  CHECK !
+SP_VD_CRGKNT_02JUL2019.xlsx  :  CHECK !
+SP_VD_HKTASK_02JUL2019.xlsx  :  CHECK !
+SP_VD_HTKS_28MAR2019.xlsx  :  OK
+SP_VD_MMT_19APR2019.xlsx  :  OK
+SP_VD_NCKLOVIM_02JUL2019.xlsx  :  CHECK !
+SP_VD_PHRE_02JUL2019.xlsx  :  OK
+SP_VD_PID_24JUN2019.xlsx  :  CHECK !
+SP_VD_PID_noNames_02JUL2019.xlsx  :  CHECK !
+SP_VD_QT_02JUL2019.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+SP_VD_ADINT _26OCT2018.xlsx  :  452
+SP_VD_BIO_09APR2019.xlsx  :  70
+SP_VD_CATVB_19APR2019.xlsx  :  2
+SP_VD_CHIKNT_19APR2019.xlsx  :  36
+SP_VD_CKNTTH_05APR2019.xlsx  :  71
+SP_VD_CRGKNT_02JUL2019.xlsx  :  9
+SP_VD_HKTASK_02JUL2019.xlsx  :  2
+SP_VD_NCKLOVIM_02JUL2019.xlsx  :  104
+SP_VD_PID_24JUN2019.xlsx  :  191
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+SP_VD_ADINT _26OCT2018.xlsx :
+Variable Q3_job_comments.. is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_BIO_09APR2019.xlsx :
+Variable grip_R1g is not present in both database and dictionary TREE. Please check spelling.
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CHIKNT_19APR2019.xlsx :
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CHINT_04APR2019.xlsx :
+Variable Comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_HKTASK_02JUL2019.xlsx :
+Variable ...34 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_NCKLOVIM_02JUL2019.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable string_used is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_uk is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_string_used is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable background is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_eyes_inview is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_PID_24JUN2019.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Box/DataToProcess2/Data Sheets .xls/SP/SP_VD_PID_24JUN2019.xlsx
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_PID_noNames_02JUL2019.xlsx :
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 

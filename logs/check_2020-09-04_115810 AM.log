@@ -1,0 +1,79 @@
+********************************************************************************
+log created at: Fri Sep 04 11:58:10 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+EC_BR_ACAKN_19FEB2020.xlsx  :  OK
+EC_BR_BIO_31AUG2020.xlsx  :  CHECK !
+EC_BR_CATVB_27FEB2020.xlsx  :  CHECK !
+EC_BR_CHIKNT_31AUG2020.xlsx  :  CHECK !
+EC_BR_CRGKNT_31AUG2020.xlsx  :  CHECK !
+EC_BR_HKTASK_31AUG2020.xlsx  :  CHECK !
+EC_BR_HTKS_19FEB2020.xlsx  :  CHECK !
+EC_BR_MMT_31AUG2020.xlsx  :  CHECK !
+EC_BR_NCKLOVIM_31AUG2020.xlsx  :  CHECK !
+EC_BR_PID_25AUG2020.xlsx  :  CHECK !
+EC_BR_PID_noNames_02SEP2020.xlsx  :  CHECK !
+EC_BR_PZOVIM_31AUG2020.xlsx  :  CHECK !
+EC_BR_QT_06JAN2020.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+EC_BR_BIO_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_CATVB_27FEB2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_CHIKNT_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_CRGKNT_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_HKTASK_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_HTKS_19FEB2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_MMT_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_NCKLOVIM_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_PID_25AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_PID_noNames_02SEP2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_PZOVIM_31AUG2020.xlsx :
+restarting interrupted promise evaluation
+ 
+--> 
+EC_BR_QT_06JAN2020.xlsx :
+restarting interrupted promise evaluation
+ 

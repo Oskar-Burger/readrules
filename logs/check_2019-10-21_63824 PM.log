@@ -1,0 +1,56 @@
+********************************************************************************
+log created at: Mon Oct 21 18:38:24 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+NA_SG_ACAKN_16OCT2019.xlsx  :  CHECK !
+NA_SG_NCKLOVIM_16OCT2019.xlsx  :  CHECK !
+NA_SG_PID_17OCT2019.xlsx  :  CHECK !
+NA_SG_PID_noNames_17OCT2019.xlsx  :  CHECK !
+NA_SG_PZOVIM_16OCT2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+NA_SG_ACAKN_16OCT2019.xlsx :
+Variable Comments is not present in both database and dictionary TREE. Please check spelling.
+Variable Notes is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NA_SG_NCKLOVIM_16OCT2019.xlsx :
+Variable Notes is not present in both database and dictionary TREE. Please check spelling.
+Variable string color is not present in both database and dictionary TREE. Please check spelling.
+Variable lifted nckl is not present in both database and dictionary TREE. Please check spelling.
+Variable Reset materials is not present in both database and dictionary TREE. Please check spelling.
+Variable RA prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable RA prompt code is not present in both database and dictionary TREE. Please check spelling.
+Variable Part question is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NA_SG_PID_17OCT2019.xlsx :
+Variable newage is not present in both database and dictionary TREE. Please check spelling.
+Variable comboage is not present in both database and dictionary TREE. Please check spelling.
+Variable C_PID is not present in both database and dictionary TREE. Please check spelling.
+Variable school is not present in both database and dictionary TREE. Please check spelling.
+Variable effectivebirthday is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NA_SG_PID_noNames_17OCT2019.xlsx :
+Variable C_PID is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NA_SG_PZOVIM_16OCT2019.xlsx :
+Variable RESET MATERIALS is not present in both database and dictionary TREE. Please check spelling.
+Variable RA PROMPT is not present in both database and dictionary TREE. Please check spelling.
+Variable RA PROMPT CODE is not present in both database and dictionary TREE. Please check spelling.
+ 

@@ -1,0 +1,70 @@
+********************************************************************************
+log created at: Thu Aug 08 18:44:18 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+MA_JW_ACAKN_08AUG2019.xlsx  :  OK
+MA_JW_BIO_08AUG2019.xlsx  :  CHECK !
+MA_JW_CATVB_08AUG2019.xlsx  :  OK
+MA_JW_CHINT_19APR2019.xlsx  :  CHECK !
+MA_JW_HKTASK_08AUG2019.xlsx  :  OK
+MA_JW_HTKS_08AUG2018.xlsx  :  CHECK !
+MA_JW_MMT_08AUG2019.xlsx  :  OK
+MA_JW_NCKLOVIM_15JUL2019.xlsx  :  CHECK !
+MA_JW_PHRE_08AUG2019.xlsx  :  OK
+MA_JW_PID_noNames_08AUG2019.xlsx  :  OK
+MA_JW_PZOVIM_08AUG2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+MA_JW_BIO_08AUG2019.xlsx  :  25
+MA_JW_HTKS_08AUG2018.xlsx  :  1
+MA_JW_NCKLOVIM_15JUL2019.xlsx  :  5
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+MA_JW_BIO_08AUG2019.xlsx :
+Variable seat_height is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_CHINT_19APR2019.xlsx :
+Variable Q6.y.n is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_NCKLOVIM_15JUL2019.xlsx :
+Variable ...52 is not present in both database and dictionary TREE. Please check spelling.
+Variable task comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_PZOVIM_08AUG2019.xlsx :
+Variable PID_student is not present in both database and dictionary TREE. Please check spelling.
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable num_other_box_taps is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_uk is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable background is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_eyes_inview is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 

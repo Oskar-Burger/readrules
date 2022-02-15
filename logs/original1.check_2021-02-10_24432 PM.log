@@ -1,0 +1,48 @@
+********************************************************************************
+log created at: Wed Feb 10 14:44:32 2021
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+FA_GI_CATVB_30SEP2020.xlsx  :  CHECK !
+FA_GI_HTKS_26JAN2021.xlsx  :  CHECK !
+FA_GI_MMT_02FEB2021.xlsx  :  OK
+FA_GI_PARTSURV_14AUG2020.xlsx  :  CHECK !
+FA_GI_PID_02FEB2020.xlsx  :  CHECK !
+FA_GI_PID_noNames_10FEB2021.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+FA_GI_CATVB_30SEP2020.xlsx  :  2
+FA_GI_PARTSURV_14AUG2020.xlsx  :  1
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+FA_GI_HTKS_26JAN2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/FA/FA_GI_HTKS_26JAN2021.xlsx
+ 
+--> 
+FA_GI_PARTSURV_14AUG2020.xlsx :
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13always_somet10 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+FA_GI_PID_02FEB2020.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/FA/FA_GI_PID_02FEB2020.xlsx
+Variable L Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+FA_GI_PID_noNames_10FEB2021.xlsx :
+Variable age_listed is not present in both database and dictionary TREE. Please check spelling.
+ 

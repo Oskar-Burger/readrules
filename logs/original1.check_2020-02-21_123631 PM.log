@@ -1,0 +1,171 @@
+********************************************************************************
+log created at: Fri Feb 21 12:36:31 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+EC_BR_ACAKN_19FEB2020.xlsx  :  CHECK !
+EC_BR_BIO_29JAN2020.xlsx  :  CHECK !
+EC_BR_HKTASK_19FEB2020.xlsx  :  OK
+EC_BR_HTKS_19FEB2020.xlsx  :  OK
+EC_BR_MMT_19FEB2020.xlsx  :  CHECK !
+EC_BR_NCKLOVIM_29JAN2020.xlsx  :  CHECK !
+EC_BR_PZOVIM_20FEB2020.xlsx  :  OK
+MA_JW_ACAKN_22JAN2020.xlsx  :  OK
+MA_JW_BIO_14FEB2020.xlsx  :  CHECK !
+MA_JW_HKTASK_22JAN2020.xlsx  :  OK
+MA_JW_HTKS_14FEB2020.xlsx  :  CHECK !
+MA_JW_MMT_22JAN2020.xlsx  :  OK
+MA_JW_NCKLOVIM_22JAN2020.xlsx  :  OK
+MA_JW_PID_noNames_22JAN2020.xlsx  :  OK
+MA_JW_PZOVIM_22JAN2020.xlsx  :  CHECK !
+MM_FF_ACAKN_13FEB2020.xlsx  :  OK
+MM_FF_BIO_13FEB2020.xlsx  :  CHECK !
+MM_FF_HKTASK_13FEB2020.xlsx  :  OK
+MM_FF_HTKS_13FEB2020.xlsx  :  OK
+MM_FF_MMT_09JAN2020.xlsx  :  OK
+MM_FF_NCKLOVIM_13FEB2020.xlsx  :  OK
+MM_FF_PID_noNames_12FEB2012.xlsx  :  OK
+MM_FF_PZOVIM_13FEB2020.xlsx  :  OK
+SP_VD_ACAKN_17FEB2020.xlsx  :  OK
+SP_VD_BIO_17FEB2020.xlsx  :  OK
+SP_VD_HKTASK_17FEB2020.xlsx  :  OK
+SP_VD_HTKS_17FEB2020.xlsx  :  OK
+SP_VD_MMT_17FEB2020.xlsx  :  OK
+SP_VD_NCKLOVIM_17FEB2020.xlsx  :  OK
+SP_VD_PID_noNames_17FEB2020.xlsx  :  OK
+SP_VD_PUZZLEBOX_17FEB2020.xlsx  :  OK
+TA_EM_ACAKN_23JAN2020.xlsx  :  OK
+TA_EM_BIO_23JAN2020.xlsx  :  OK
+TA_EM_HKTASK_28JAN2020.xlsx  :  CHECK !
+TA_EM_HTKS_23JAN2020.xlsx  :  OK
+TA_EM_MMT_28JAN2020.xlsx  :  OK
+TA_EM_NCKLOVIM_23JAN2020.xlsx  :  CHECK !
+TA_EM_PID_noNames_23JUL2019.xlsx  :  OK
+TA_EM_PZOVIM_06JUN2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+EC_BR_ACAKN_19FEB2020.xlsx  :  1
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+EC_BR_ACAKN_19FEB2020.xlsx :
+Variable ...6 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_BIO_29JAN2020.xlsx :
+Variable height is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_MMT_19FEB2020.xlsx :
+Variable reward_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable reward_2 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_NCKLOVIM_29JAN2020.xlsx :
+Variable PID is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable blu_final_seq is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_num_string_stretch is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_string_flat is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_YS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_BS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_RS is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_PC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_GC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_beads_used_OC is not present in both database and dictionary TREE. Please check spelling.
+Variable rd_final_seq is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_BIO_14FEB2020.xlsx :
+Variable seat_height is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_HTKS_14FEB2020.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Box/DataToProcess2/Data Sheets .xls/MA/MA_JW_HTKS_14FEB2020.xlsx
+Variable experimenter_ID is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_id is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_day is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_month is not present in both database and dictionary TREE. Please check spelling.
+Variable QAQC_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable general_QAQC_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_PZOVIM_22JAN2020.xlsx :
+Variable num_other_box_taps is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_uk is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable background is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_eyes_inview is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_BIO_13FEB2020.xlsx :
+Variable error_count is not present in both database and dictionary TREE. Please check spelling.
+Variable error_loc is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_HKTASK_28JAN2020.xlsx :
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_NCKLOVIM_23JAN2020.xlsx :
+Variable error_comments3 is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments4 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_PZOVIM_06JUN2019.xlsx :
+Variable PID_student is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable verb_prompt_uk is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable vis_prompt_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable materials_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable demo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable app_malf_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable memo_mistake_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_bg is not present in both database and dictionary TREE. Please check spelling.
+Variable watched_sm is not present in both database and dictionary TREE. Please check spelling.
+Variable distraction is not present in both database and dictionary TREE. Please check spelling.
+Variable background is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_eyes_inview is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ...43 is not present in both database and dictionary TREE. Please check spelling.
+ 

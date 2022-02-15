@@ -1,0 +1,90 @@
+********************************************************************************
+log created at: Fri Feb 07 14:19:08 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+MM_FF_ACAKN_09JAN2020.xlsx  :  OK
+MM_FF_BIO_07FEB2020.xlsx  :  CHECK !
+MM_FF_CATVB_09JAN2020.xlsx  :  CHECK !
+MM_FF_CHIKNT_09JAN2020.xlsx  :  CHECK !
+MM_FF_CKNTTH_09JAN2020.xlsx  :  CHECK !
+MM_FF_CRGKT_09JAN2020.xlsx  :  CHECK !
+MM_FF_HKTASK_09JAN2020.xlsx  :  OK
+MM_FF_HTKS_07FEB2020.xlsx  :  OK
+MM_FF_MMT_09JAN2020.xlsx  :  CHECK !
+MM_FF_NCKLOVIM_07FEB2020.xlsx  :  OK
+MM_FF_PARTSURV_09JAN2020.xlsx  :  CHECK !
+MM_FF_PHRE_07FEB2020.xlsx  :  OK
+MM_FF_PID_07FEB2020.xlsx  :  CHECK !
+MM_FF_PZOVIM_07FEB2020.xlsx  :  OK
+MM_FF_QT_07FEB2020.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+MM_FF_CATVB_09JAN2020.xlsx  :  120
+MM_FF_CHIKNT_09JAN2020.xlsx  :  2
+MM_FF_CKNTTH_09JAN2020.xlsx  :  8
+MM_FF_CRGKT_09JAN2020.xlsx  :  2
+MM_FF_MMT_09JAN2020.xlsx  :  2
+MM_FF_PARTSURV_09JAN2020.xlsx  :  23
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+MM_FF_BIO_07FEB2020.xlsx :
+Variable handed_draw is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CKNTTH_09JAN2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CRGKT_09JAN2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PARTSURV_09JAN2020.xlsx :
+Variable 4_sib1_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib2_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib3_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib4_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib5_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib6_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib7_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib8_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib9_se is not present in both database and dictionary TREE. Please check spelling.
+Variable 4_sib10_se is not present in both database and dictionary TREE. Please check spelling.
+Variable CHILD is not present in both database and dictionary TREE. Please check spelling.
+Variable ADULTS is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se1 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se2 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se3 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se4 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se5 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se6 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se7 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se8 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se9 is not present in both database and dictionary TREE. Please check spelling.
+Variable 13_se10 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se1 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se2 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se3 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se4 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se5 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se6 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se7 is not present in both database and dictionary TREE. Please check spelling.
+Variable 19a_se8 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_PID_07FEB2020.xlsx :
+Variable L.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Age_method is not present in both database and dictionary TREE. Please check spelling.
+ 

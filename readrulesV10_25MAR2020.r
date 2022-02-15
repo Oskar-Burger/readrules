@@ -631,9 +631,9 @@ FindDataFiles<-function(MainDir="/home/maciej/Documents/R-PRJ/Oskar", DataDirNam
   return(Mat)
 }
 
-check.name<-function(path, ltab = matrix(c('Emily','Frankie','Gairan','Julia', 'Sarah','Scott','thinkery','Vivian','Oskar','Sabrina','Bruce','Micah','Gordon','Laura', # researcher first name
-                                           'EM','FF','GP','JW', 'SP','SC','BR','VD','OB','SG','BR','MG','GI','LS', # researcher initial
-                                           'TA','MM','MA','MA','BA','AS','TH','SP','FD','NB','EC','SY','FA','YP'),ncol=3), back=1) # fieldsite initial. these must all match up! 
+check.name<-function(path, ltab = matrix(c('Emily','Frankie','Gairan','Julia', 'Sarah','Scott','thinkery','Vivian','Oskar','Sabrina','Bruce','Micah','Gordon','Laura', 'Ciara','Gordon',# researcher first name
+                                           'EM','FF','GP','JW', 'SP','SC','BR','VD','OB','SG','BR','MG','GI','LS', 'CW','GI',# researcher initial
+                                           'TA','MM','MA','MA','BA','AS','TH','SP','FD','NB','EC','SY','FA','YP','WA','SC'),ncol=3), back=1) # fieldsite initial. these must all match up! 
                                             { 
   if (!length(ncol(ltab)) || ncol(ltab)!=3) stop('Wrong ltab',call.=FALSE)
   ltab <- toupper(ltab)
@@ -979,7 +979,7 @@ AutoTest<-function(FILES, TREE, logFileBase="check", logDir='logs', save_marked 
 #AutoTest<-function(FILE, TREE, logFileBase="check", logDir='logs', save_marked = 'on_errors'){
   if (!suppressWarnings(require(xlsx))) install.packages('xlsx')
   library(xlsx)
-  assign("last.warning", NULL, envir = baseenv())
+ # assign("last.warning", NULL, envir = baseenv())
   w<-list()
   L<-length(FILES$FILE)
   errors<-rep(0,L)
@@ -990,7 +990,7 @@ AutoTest<-function(FILES, TREE, logFileBase="check", logDir='logs', save_marked 
     })
     errors[Fi]<-sum(na.omit(as.vector(as.data.frame(g$value$marked)=='!PROBLEM!')))
     w<-c(w,list(gsub('simpleWarning: ','',g$warnings,fixed = TRUE)))
-    assign("last.warning", NULL, envir = baseenv())
+   # assign("last.warning", NULL, envir = baseenv())
   }
   names(w)<-FILES$PATH
   indERR <- which(errors>0)
@@ -1127,7 +1127,7 @@ PIDTEST_s = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max
 PIDTEST_t = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 8,AlternativePID = "teacher")
 identical(PIDTEST_t,PIDTEST_s)
 
-PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 8)
+PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 6)
 PIDTEST
 
 # here is no message
@@ -1184,7 +1184,10 @@ as.data.frame(PIDTEST)
 # write.xlsx(PIDTEST, 'PIDRES_SY_20NOV2020.xlsx', sheetName = 'SY_MG_PIDS')
 # write.xlsx(PIDTEST, 'PIDRES_FA_10FEB2020.xlsx', sheetName = 'FA_GI_PIDS')
 # write.xlsx(PIDTEST, 'PIDRES_QTHTKSpaper_18JUN2021.xlsx', sheetName = 'QTHTKS_PIDS')
-write.xlsx(PIDTEST, 'PIDRES_YP_12JUL2021.xlsx', sheetName = 'YP_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_YP_12JUL2021.xlsx', sheetName = 'YP_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_WA_18NOV2021.xlsx', sheetName = 'WA_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_SC_demobio_12DEC2021.xlsx', sheetName = 'SC_PIDS')
+write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_04FEB2022.xlsx', sheetName = 'DemoBio_PIDS')
 
 
 
@@ -1343,52 +1346,56 @@ DBs$Queensland
 
 # MasterFile QTHTKS ----
 # Tanna, Saltpond, and Mah Meri, Natal 
+ 
+# DF1 = as.data.frame(DB$PIDreg_noname) #
+# DF2 = as.data.frame(DB$Biometric) #
+# DF3 = as.data.frame(DB$HTKS) #
+# DF4 = as.data.frame(DB$Queensland) #
+# DF5 = as.data.frame(DB$ChildInterview) #
+# DF6 = as.data.frame(DB$Partsurvey) #
+# DF7 = as.data.frame(DB$AdInt)
+# 
+# # idea: rename each DF, child interview, adult interview, participant survey first, then use fast merge?. 
+# # import column linker 
 library(tidyverse)
-DF1 = as.data.frame(DB$PIDreg_noname) #
-DF2 = as.data.frame(DB$Biometric) #
-DF3 = as.data.frame(DB$HTKS) #
-DF4 = as.data.frame(DB$Queensland) #
-DF5 = as.data.frame(DB$ChildInterview) #
-DF6 = as.data.frame(DB$Partsurvey) #
-DF7 = as.data.frame(DB$AdInt)
 
-# idea: rename each DF, child interview, adult interview, participant survey first, then use fast merge?. 
-# import column linker 
-adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx")
-chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx")
+adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx") %>%
+  mutate(PartSurv = paste('X',PartSurv,sep = ""))
+chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx") %>%
+  mutate(PartSurv = paste('X',PartSurv,sep = ""))
 adcols = adultcollinks %>% select(oldname = AdultInt, newname = NewName, PartSurv)
 chicols = chicollinks %>% select(oldname = ChildInt, newname = NewName, PartSurv)
 partcols = data.frame(oldname = c(adcols$PartSurv, chicols$PartSurv), 
-                      newname = c(adcols$newname, chicols$newname))
+                       newname = c(adcols$newname, chicols$newname))
 allcols = bind_rows(adcols,chicols,partcols)
-
-setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-setnames(DF6, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-setnames(DF7, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-# recall that for years in school: 
-# child interview: Q6a: which we use below 
-# adult interview: Q20a_schlyrs 
-# part surv: years in school minus current age if you are in school now...
-
-QTHTKSlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7)
-QTHTKSlist = rename.duplicated(QTHTKSlist, extensions=c('PIDr','BIO','HTKS',"QT",'CHIINT','Psurv','Adint'), 
-                               ignore=c('PID','location','PID_location'))
-DF_QTHTKS <- fast.merge.list(QTHTKSlist,by=c('PID','location','PID_location'))
-DF_QTHTKS = DF_QTHTKS %>% mutate(cmb_age.Psurv = replace(cmb_age.Psurv, cmb_age.Psurv < 0 , NA),
-                                 `10b_schl_go_age` = replace(`10b_schl_go_age`, `10b_schl_go_age` < 0 , NA),
-                                 `Q20a_schlyrs` = replace(`Q20a_schlyrs`, `Q20a_schlyrs` < 0 , NA),
-                          psurv_yrsschol = as.numeric(cmb_age.Psurv)  - as.numeric(`10b_schl_go_age`)) %>%
-                          mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
-                                 chint_yrsschool = readr::parse_number(Q6a),
-                                 adint_yrsschool = readr::parse_number(Q20a_schlyrs),
-                                 yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
-                                 yrs_school = coalesce(yrs_school, adint_yrsschool))
-
-
-dropvec = c('notes','year','month','day','time_s','time_en','task','filmed','comments','Q2','Q3','3_','4_','7_','13_')
-dim(DF_QTHTKS)
-DF_QTHTKS_mf = DF_QTHTKS %>% dplyr::select(-contains(dropvec))
-dim(DF_QTHTKS_mf)
+# 
+# setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+# setnames(DF6, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+# setnames(DF7, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+# # recall that for years in school: 
+# # child interview: Q6a: which we use below 
+# # adult interview: Q20a_schlyrs 
+# # part surv: years in school minus current age if you are in school now...
+# 
+# QTHTKSlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7)
+# QTHTKSlist = rename.duplicated(QTHTKSlist, extensions=c('PIDr','BIO','HTKS',"QT",'CHIINT','Psurv','Adint'), 
+#                                ignore=c('PID','location','PID_location'))
+# DF_QTHTKS <- fast.merge.list(QTHTKSlist,by=c('PID','location','PID_location'))
+# DF_QTHTKS = DF_QTHTKS %>% mutate(cmb_age.Psurv = replace(cmb_age.Psurv, cmb_age.Psurv < 0 , NA),
+#                                  `10b_schl_go_age` = replace(`10b_schl_go_age`, `10b_schl_go_age` < 0 , NA),
+#                                  `Q20a_schlyrs` = replace(`Q20a_schlyrs`, `Q20a_schlyrs` < 0 , NA),
+#                           psurv_yrsschol = as.numeric(cmb_age.Psurv)  - as.numeric(`10b_schl_go_age`)) %>%
+#                           mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
+#                                  chint_yrsschool = readr::parse_number(Q6a),
+#                                  adint_yrsschool = readr::parse_number(Q20a_schlyrs),
+#                                  yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
+#                                  yrs_school = coalesce(yrs_school, adint_yrsschool))
+# 
+# 
+# dropvec = c('notes','year','month','day','time_s','time_en','task','filmed','comments','Q2','Q3','3_','4_','7_','13_')
+# dim(DF_QTHTKS)
+# DF_QTHTKS_mf = DF_QTHTKS %>% dplyr::select(-contains(dropvec))
+# dim(DF_QTHTKS_mf)
 
 
 # DF_QTHTKS_mf = DF_QTHTKS %>% select(-c(11,17:20,26:41,43:56,319:510,536:539,557:586,641:716,719:814,820:823,826:991))
@@ -1413,10 +1420,44 @@ dim(DF_QTHTKS_mf)
 #DF<-fast.merge.list(list(DF2,DF3,DF4),by=c('PID','PID_location','location'))
 #as.data.table(DF)
 #View(DF)
-
-
 #DF = DF_Sabrina
 #checking for mistakes, but use check.PID() and correct for mistakes before
+
+## Demo Bio Master Master File !! ----
+
+# A DF for each dataset
+# then define blocks:
+# 1 - all the Nonames and Bios 
+DF1 <- as.data.frame(DB$PIDreg_noname[])
+DF2 <- as.data.frame(DB$Biometric[]) %>% 
+  select(-c(contains('...'),seat_height,height_sit))
+DF3 <- as.data.frame(DB$AdInt[])
+DF4 <- as.data.frame(DB$ChildInterview[])
+DF5 <- as.data.frame(DB$Partsurvey)
+
+
+# rename child int
+setnames(DF4, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+# rename part survey
+setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+# rename ad int
+setnames(DF3, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
+
+DFchipart = bind_rows(DF4, DF5)
+DFadintpart = bind_rows(DF3, DF5)
+
+demogbiolist = list(DF1,DF2,DFchipart, DFadintpart)
+demogbiolist = rename.duplicated(demogbiolist, extensions=c('PIDr','BIO','chipart','adpart'), 
+                                                    ignore=c('PID','location','PID_location'))
+
+DF_biodem = fast.merge.list(demogbiolist, by=c('PID','PID_location','location'))
+
+# DT <- as.data.table(DF_biodem)
+# DT = DT[,which(unlist(lapply(DT, function(x)!all(is.na(x))))),with=F]
+
+not_all_na <- function(x) any(!is.na(x))
+DF_biodem = DF_biodem %>% select(where(not_all_na)) # doesn't remove as many as hoped.
+
 t1<-sum(duplicated(DF$PID)) 
 t2<-sum(duplicated(DF$PID_location)) 
 if (t1>0) warning('The same PID found in two or more different locations. Is this possible?',call.=FALSE)
@@ -1434,7 +1475,7 @@ td=format(lubridate::today(), "%Y%m%d")
 #write.csv(DF,paste('Lydia_Data_',td,'.csv'))
 #readr::write_csv(DF,paste('Lydia_Data_',td,'.csv'))
 
-library(dplyr)
+
 #DF2=DF%>%group_by(location) %>%arrange(as.numeric(age_pid), .by_group = TRUE)
 #xlsx::write.xlsx(DF2,paste('Sabrina_Data2_',td,'.xlsx'),sheetName="SabrinaData", row.names=FALSE,showNA=FALSE)
 
@@ -1448,14 +1489,16 @@ library(dplyr)
 
 #xlsx::write.xlsx(DF_stan,paste('DF_StanfordTalk_Master_',td,sep='','.xlsx'),sheetName="StandfordTalk_minimaster",row.names = 'FALSE')
 
-DF_QTHTKS_mf = DF_QTHTKS_mf %>% group_by(location) %>% arrange(as.numeric(age_pid), .by_group = TRUE) %>% ungroup()
-DF_QTHTKS_mf = as.data.frame(DF_QTHTKS_mf)
+# DF_QTHTKS_mf = DF_QTHTKS_mf %>% group_by(location) %>% arrange(as.numeric(age_pid), .by_group = TRUE) %>% ungroup()
+# DF_QTHTKS_mf = as.data.frame(DF_QTHTKS_mf)
 # next, need to drop irrelevant columns and 
 
 #xlsx::write.xlsx(DFBruce,paste('DF_OvImHook_TASPMA_MasterFile_',td,sep='','.xlsx'),sheetName="BruceOvIm_minimaster",row.names = 'FALSE')
-xlsx::write.xlsx(DF_QTHTKS_mf,paste('DF_QTHTKS_MasterFile_',td,sep='','.xlsx'),sheetName="QTHTKS_mf",row.names = 'FALSE')
+# xlsx::write.xlsx(DF_QTHTKS_mf,paste('DF_QTHTKS_MasterFile_',td,sep='','.xlsx'),sheetName="QTHTKS_mf",row.names = 'FALSE')
 
-
+# xlsx::write.xlsx(DF_biodem,paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",row.names = 'FALSE')
+library(openxlsx)
+openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'))
 #str(DF2)
 #write.csv(DF,paste('Lydia_Data_',td,'.csv'))
 #readr::write_csv(DF2,paste('Sabrina_Data_',td,'.csv'),na='')
@@ -1465,7 +1508,7 @@ xlsx::write.xlsx(DF_QTHTKS_mf,paste('DF_QTHTKS_MasterFile_',td,sep='','.xlsx'),s
 # Check for mistakes
 #########################################################################################################3
 
-# fully automated, 
+# fully automated, ----
 
 #This process whole database
 # use save_unmarked='always' if you want the old functionality

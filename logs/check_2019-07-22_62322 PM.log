@@ -1,0 +1,62 @@
+********************************************************************************
+log created at: Mon Jul 22 18:23:22 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+TA_EM_ACAKN_22JUL2019.xlsx  :  OK
+TA_EM_ADINT_17JUL2019.xlsx  :  CHECK !
+TA_EM_BIO_22JUL2019.xlsx  :  OK
+TA_EM_CATVB_22JUL2019.xlsx  :  OK
+TA_EM_CHIKNT_22JUL2019.xlsx  :  OK
+TA_EM_CHINT_22JUL2019.xlsx  :  OK
+TA_EM_CRGKNT_22JUL2019.xlsx  :  CHECK !
+TA_EM_HKTASK_22JUL2019.xlsx  :  OK
+TA_EM_HTKS_22JUL2019.xlsx  :  OK
+TA_EM_MMT_22JUL2019.xlsx  :  OK
+TA_EM_NCKLOVIM_22JUL2019.xlsx  :  CHECK !
+TA_EM_PHRE_22JUL2019.xlsx  :  OK
+TA_EM_PID_22JUL2019.xlsx  :  CHECK !
+TA_EM_PID_noNames_15MAY2019.xlsx  :  CHECK !
+TA_EM_PZOVIM_22JUL2019.xlsx  :  OK
+TA_EM_QT_22JUL2019.xlsx  :  OK
+TA_EM_THINT_22JUL2019.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+TA_EM_ADINT_17JUL2019.xlsx  :  4
+TA_EM_CRGKNT_22JUL2019.xlsx  :  1
+TA_EM_NCKLOVIM_22JUL2019.xlsx  :  71
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+TA_EM_ADINT_17JUL2019.xlsx :
+Variable Q16a_foodcertd_tanna is not present in both database and dictionary TREE. Please check spelling.
+Variable Q16b_foodcertmo_tanna is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_PID_22JUL2019.xlsx :
+Variable Mother is not present in both database and dictionary TREE. Please check spelling.
+Variable Father is not present in both database and dictionary TREE. Please check spelling.
+Variable Agemethod is not present in both database and dictionary TREE. Please check spelling.
+Variable Site is not present in both database and dictionary TREE. Please check spelling.
+Variable Comments is not present in both database and dictionary TREE. Please check spelling.
+Variable newbirthday is not present in both database and dictionary TREE. Please check spelling.
+Variable today is not present in both database and dictionary TREE. Please check spelling.
+Variable newagetocheck is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_PID_noNames_15MAY2019.xlsx :
+Variable newagetocheck is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_THINT_22JUL2019.xlsx :
+Variable comments2 is not present in both database and dictionary TREE. Please check spelling.
+ 

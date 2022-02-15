@@ -1,0 +1,57 @@
+********************************************************************************
+log created at: Mon Feb 17 19:23:39 2020
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+SP_VD_ACAKN_17FEB2020.xlsx  :  OK
+SP_VD_ADINT_17FEB2020.xlsx  :  OK
+SP_VD_BIO_17FEB2020.xlsx  :  OK
+SP_VD_CATVB_17FEB2020.xlsx  :  OK
+SP_VD_CHIKNT_17FEB2020.xlsx  :  CHECK !
+SP_VD_CHINT_17FEB2020.xlsx  :  CHECK !
+SP_VD_CKNTTH_17FEB2020.xlsx  :  CHECK !
+SP_VD_CRGKNT_17FEB2020.xlsx  :  CHECK !
+SP_VD_HKTASK_17FEB2020.xlsx  :  OK
+SP_VD_HTKS_17FEB2020.xlsx  :  OK
+SP_VD_MMT_17FEB2020.xlsx  :  OK
+SP_VD_NCKLOVIM_17FEB2020.xlsx  :  OK
+SP_VD_PHRE_17FEB2020.xlsx  :  OK
+SP_VD_PID_17FEB2020.xlsx  :  CHECK !
+SP_VD_PID_noNames_17FEB2020.xlsx  :  OK
+SP_VD_PUZZLEBOX_17FEB2020.xlsx  :  OK
+SP_VD_QT_17FEB2020.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+SP_VD_CHIKNT_17FEB2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CHINT_17FEB2020.xlsx :
+Variable Q6.y.n is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CKNTTH_17FEB2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CRGKNT_17FEB2020.xlsx :
+Variable relationsnip_teacher_student is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_PID_17FEB2020.xlsx :
+Variable L.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable F.Name is not present in both database and dictionary TREE. Please check spelling.
+Variable Age.method is not present in both database and dictionary TREE. Please check spelling.
+ 

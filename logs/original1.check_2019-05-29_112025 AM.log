@@ -1,0 +1,62 @@
+********************************************************************************
+log created at: Wed May 29 11:20:25 2019
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+SP_VD_ACAKN_20MAY2019.xlsx  :  OK
+SP_VD_ADINT_20MAY2019.xlsx  :  CHECK !
+SP_VD_BIO_20MAY2019.xlsx  :  CHECK !
+SP_VD_CATVB_20MAY2019.xlsx  :  CHECK !
+SP_VD_CHIKNT_20MAY2019.xlsx  :  CHECK !
+SP_VD_CHINT_04APR2019.xlsx  :  CHECK !
+SP_VD_CKNTTH_20MAY2019.xlsx  :  CHECK !
+SP_VD_CRGKNT_20MAY2019.xlsx  :  CHECK !
+SP_VD_HKTASK_20MAY2019_QAQC.xlsx  :  CHECK !
+SP_VD_HTKS_20MAY2019.xlsx  :  OK
+SP_VD_MMT_20MAY2019.xlsx  :  OK
+SP_VD_NCKLOVIM_20MAY2019.xlsx  :  CHECK !
+SP_VD_PHRE_20May2019.xlsx  :  OK
+SP_VD_PID_noNames_20MAY2019.xlsx  :  OK
+SP_VD_PUZZLEBOX_20MAY019.xlsx  :  CHECK !
+SP_VD_QT_20MAY2019.xlsx  :  OK
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+SP_VD_ADINT_20MAY2019.xlsx  :  452
+SP_VD_BIO_20MAY2019.xlsx  :  70
+SP_VD_CATVB_20MAY2019.xlsx  :  2
+SP_VD_CKNTTH_20MAY2019.xlsx  :  71
+SP_VD_CRGKNT_20MAY2019.xlsx  :  9
+SP_VD_NCKLOVIM_20MAY2019.xlsx  :  1
+SP_VD_PUZZLEBOX_20MAY019.xlsx  :  2
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+SP_VD_ADINT_20MAY2019.xlsx :
+Variable Q3_job_comments.. is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_BIO_20MAY2019.xlsx :
+Variable grip_R1g is not present in both database and dictionary TREE. Please check spelling.
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CHIKNT_20MAY2019.xlsx :
+Variable comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_CHINT_04APR2019.xlsx :
+Variable ...20 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_HKTASK_20MAY2019_QAQC.xlsx :
+Variable ...34 is not present in both database and dictionary TREE. Please check spelling.
+ 
