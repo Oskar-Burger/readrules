@@ -31,7 +31,7 @@ library(xlsx)
 library(data.table)
 library(reshape2)
 library(tibble)
-
+library(tidyverse)
 # # A=data.frame(aa=1:5,bb=1:5,dd=1:5)
 # # B=data.frame(aa=6:9,cc=6:9,ee=6:9)
 # # C=data.frame(aa=4:9,ff=4:9,ee=4:9)
@@ -1106,6 +1106,8 @@ TREE
 
 FILES <- FindDataFiles(DIR)
 FILES <- FILES[!grepl('_corrected_',FILES$FILE,fixed=TRUE),] #remove corrected file names
+FILES <- FILES[!grepl('SAVEFORLATER!',FILES$DIR,fixed=TRUE),] #remove setaside files0
+
 as.matrix(FILES$DIR)
 as.matrix(FILES$FILE)
 
@@ -1187,7 +1189,8 @@ as.data.frame(PIDTEST)
 # write.xlsx(PIDTEST, 'PIDRES_YP_12JUL2021.xlsx', sheetName = 'YP_PIDS')
 # write.xlsx(PIDTEST, 'PIDRES_WA_18NOV2021.xlsx', sheetName = 'WA_PIDS')
 # write.xlsx(PIDTEST, 'PIDRES_SC_demobio_12DEC2021.xlsx', sheetName = 'SC_PIDS')
-write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_04FEB2022.xlsx', sheetName = 'DemoBio_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_28FEB2022.xlsx', sheetName = 'DemoBio_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_CATVBACAKN_28FEB2022.xlsx', sheetName = 'CATVB_PIDS')
 
 
 
@@ -1224,8 +1227,7 @@ DBs$Queensland
 # as.data.table(DF)
 
 ####################################################################
-### Actual Output File 
-# Making a file for Lydia
+### Master file for Lydia ----
 
 #DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age','loc')])
 #DF2<- as.data.frame(DB$Biometric[,c('PID','PID_location','location','sex','age','height_stand','weight')])
@@ -1248,8 +1250,9 @@ DBs$Queensland
 # View(DF)
 
 #####################################################################
-#  Sabrina Output file! ~ 21OCT2019
-#DF1<- as.data.frame(DB$PIDreg_noname)
+#  Sabrina Output file! ~ 21OCT2019 ---- 
+
+# DF1<- as.data.frame(DB$PIDreg_noname)
 # DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age_pid','loc','comments')])
 # DF2 <- as.data.frame(DB$AcaKnowl[,c(1:21,25)])
 # DF3 <- as.data.frame(DB$NecklaceOverIm[,c(1:37,42,43:64)])
@@ -1310,10 +1313,10 @@ DBs$Queensland
 # DF7 = as.data.frame(DB$NecklaceOverIm) #
 # #DF9 = as.data.frame(DB$Phonolog) #
 # DF8 = as.data.frame(DB$PuzzleOverIm) #
-#DF12 = as.data.frame(DB$Queensland)
+# DF12 = as.data.frame(DB$Queensland)
 
 # rename PID_student to PID in necklace
-#DF8$PID<-DF8$PID_student
+# DF8$PID<-DF8$PID_student
 
 # for Bruce we need: PID, Bio, AKA, Necklace, Puzzle, Hook  
 #BruceList<-list(DF10,DF2,DF1,DF11,DF8,DF5,DF4)
@@ -1335,8 +1338,6 @@ DBs$Queensland
 #DFBruce <- fast.merge.list(BruceList,by=c('PID','PID_location','location'))
 
 
-#as.data.table(DF)
-
 #m1List<-rename.duplicated(m1List, extensions=c('PIDr','BIO','AKA','HTKS','MMT','PUZZ','NECKL','CHIINT','HOOK','CATVERB','PHONO'), 
 #      ignore=c('PID','location','PID_location'))
 #DF_m1 <- fast.merge.list(m1List,by=c('PID','location','PID_location'))
@@ -1355,19 +1356,7 @@ DBs$Queensland
 # DF6 = as.data.frame(DB$Partsurvey) #
 # DF7 = as.data.frame(DB$AdInt)
 # 
-# # idea: rename each DF, child interview, adult interview, participant survey first, then use fast merge?. 
-# # import column linker 
-library(tidyverse)
 
-adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx") %>%
-  mutate(PartSurv = paste('X',PartSurv,sep = ""))
-chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx") %>%
-  mutate(PartSurv = paste('X',PartSurv,sep = ""))
-adcols = adultcollinks %>% select(oldname = AdultInt, newname = NewName, PartSurv)
-chicols = chicollinks %>% select(oldname = ChildInt, newname = NewName, PartSurv)
-partcols = data.frame(oldname = c(adcols$PartSurv, chicols$PartSurv), 
-                       newname = c(adcols$newname, chicols$newname))
-allcols = bind_rows(adcols,chicols,partcols)
 # 
 # setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
 # setnames(DF6, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
@@ -1424,7 +1413,15 @@ allcols = bind_rows(adcols,chicols,partcols)
 #checking for mistakes, but use check.PID() and correct for mistakes before
 
 ## Demo Bio Master Master File !! ----
-
+adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx") %>%
+  mutate(PartSurv = paste('X',PartSurv,sep = ""))
+chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx") %>%
+  mutate(PartSurv = paste('X',PartSurv,sep = ""))
+adcols = adultcollinks %>% select(oldname = AdultInt, newname = NewName, PartSurv)
+chicols = chicollinks %>% select(oldname = ChildInt, newname = NewName, PartSurv)
+partcols = data.frame(oldname = c(adcols$PartSurv, chicols$PartSurv), 
+                      newname = c(adcols$newname, chicols$newname))
+allcols = bind_rows(adcols,chicols,partcols)
 # A DF for each dataset
 # then define blocks:
 # 1 - all the Nonames and Bios 
@@ -1443,11 +1440,15 @@ setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
 # rename ad int
 setnames(DF3, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
 
-DFchipart = bind_rows(DF4, DF5)
-DFadintpart = bind_rows(DF3, DF5)
+chipartcols = c(names(DF4)) # which columns to retain -- all of chipart and those that overlap with 
+DFchipart = bind_rows(DF4, DF5) %>% select(any_of(chipartcols))
+adpartcols = c(names(DF3)) # which columns to retain -- all of adult surve and those that overlap with 
+DFadintpart = bind_rows(DF3, DF5) %>% select(any_of(adpartcols))
+partsurvothercols = setdiff(names(DF5),c(chipartcols,adpartcols))
+DFotherpart = DF5 %>% select(PID, location, PID_location, any_of(partsurvothercols))
 
-demogbiolist = list(DF1,DF2,DFchipart, DFadintpart)
-demogbiolist = rename.duplicated(demogbiolist, extensions=c('PIDr','BIO','chipart','adpart'), 
+demogbiolist = list(DF1,DF2,DFchipart, DFadintpart,DFotherpart)
+demogbiolist = rename.duplicated(demogbiolist, extensions=c('PIDr','BIO','chipart','adpart','othpart'), 
                                                     ignore=c('PID','location','PID_location'))
 
 DF_biodem = fast.merge.list(demogbiolist, by=c('PID','PID_location','location'))
@@ -1457,6 +1458,41 @@ DF_biodem = fast.merge.list(demogbiolist, by=c('PID','PID_location','location'))
 
 not_all_na <- function(x) any(!is.na(x))
 DF_biodem = DF_biodem %>% select(where(not_all_na)) # doesn't remove as many as hoped.
+
+DF_biodem = DF_biodem %>% mutate(cmb_age = replace(cmb_age, cmb_age < 0 , NA),
+                                  X10b_schl_go_age = replace(X10b_schl_go_age, X10b_schl_go_age < 0 , NA),
+                                  Q20a_schlyrs = replace(Q20a_schlyrs, Q20a_schlyrs < 0 , NA),
+                          psurv_yrsschol = as.numeric(cmb_age)  - as.numeric(X10b_schl_go_age)) %>%
+                          mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
+                                 chint_yrsschool = readr::parse_number(Q6a),
+                                 chint_yrsschool = replace(chint_yrsschool, chint_yrsschool < 0, NA),
+                                 adint_yrsschool = readr::parse_number(Q20a_schlyrs),
+                                 yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
+                                 yrs_school = coalesce(yrs_school, adint_yrsschool))
+
+
+
+##################################################
+## Categorical Verbal and AKA ----
+##################################################
+# 
+# DF1 <- as.data.frame(DB$CategorVerb[])
+# DF1 <- DF1 %>% select(-c(`...1`:fieldsite))
+# DF1 <- DF1 %>% select(-contains('item'),-comments) %>% 
+#   pivot_wider(., id_cols = c(PID,location,task,PID_long,PID_task,PID_location,RA_initials),
+#                            names_from = type, values_from = c(n, time, repeats))
+# 
+# DF2 <- as.data.frame(DB$AcaKnowl[])
+# DF2 <- DF2 %>% select(-c(day:filmed), -c(comments:late_stop), -c(back_noise:general_qaqc_comments),
+#                       -c(interruption_length:other_issues_comment))
+# 
+# DFcatvbakalist = list(DF1,DF2)
+# DFcatvbakalist = rename.duplicated(DFcatvbakalist, extensions=c('CATVB', 'AKA'), 
+#                                  ignore=c('PID','location','PID_location','task'))
+# DF_catvbaka <- fast.merge.list(list(DF2,DF1),by=c('PID','PID_location','location')) 
+# DF_catvbaka <- DF_catvbaka %>% select(-contains('...'), -c(PID_long.x, PID_long.y, PID_task.x, PID_task.y),
+#                                       -c(task.x,task.y),-RA_initials)
+
 
 t1<-sum(duplicated(DF$PID)) 
 t2<-sum(duplicated(DF$PID_location)) 
@@ -1498,7 +1534,15 @@ td=format(lubridate::today(), "%Y%m%d")
 
 # xlsx::write.xlsx(DF_biodem,paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",row.names = 'FALSE')
 library(openxlsx)
+#openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'))
+# write.xlsx(DF_catvbaka, paste('DF_CATVBAKA_MasterFile_',td,sep='','.xlsx'),sheetName="CATVB_mf",
+#           showNA = FALSE, row.names = 'FALSE')
+
+#write.xlsx(DF_biodem, paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",
+ #          showNA = FALSE, row.names = 'FALSE')
 openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'))
+
+
 #str(DF2)
 #write.csv(DF,paste('Lydia_Data_',td,'.csv'))
 #readr::write_csv(DF2,paste('Sabrina_Data_',td,'.csv'),na='')
@@ -1512,7 +1556,7 @@ openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='',
 
 #This process whole database
 # use save_unmarked='always' if you want the old functionality
-AutoTest(FILES, TREE, save_marked='always')
+AutoTest(FILES, TREE, save_marked='on_errors')
 warnings()
 
 
