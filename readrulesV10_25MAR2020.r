@@ -3,7 +3,7 @@
 #     Base code for:                                         #
 #     Editing EvoLearn Project Data                          #
 #     Version: 11                                            #
-#     Last edited: 11 AUG 2020                               #
+#     Last edited: 29 MAR 2022                               #
 #                                                            #
 ##############################################################
 
@@ -17,8 +17,10 @@
 #     5. merges datafiles into master files for analysis     #
 ##############################################################
 
+## Part 1: preliminaries---- 
+
 # clean workspace if necessary
-rm(list = ls())
+rm(list = ls()) # we keep this 
 
 # load libraries
 library(readxl)
@@ -32,6 +34,8 @@ library(data.table)
 library(reshape2)
 library(tibble)
 library(tidyverse)
+library(openxlsx)
+
 # # A=data.frame(aa=1:5,bb=1:5,dd=1:5)
 # # B=data.frame(aa=6:9,cc=6:9,ee=6:9)
 # # C=data.frame(aa=4:9,ff=4:9,ee=4:9)
@@ -57,6 +61,9 @@ library(tidyverse)
 #     outlist
 #   } else DFlist
 # }
+
+## Part 2: functions---- 
+# all functions go in this section 
 
 # define global.missing.codes:
 gmc = c(-(1:6),'NA','.') 
@@ -143,7 +150,6 @@ cor.time <- function(x, ind = is.time(x, maxh = maxh), maxh = 23, add.zero.h=FAL
 
 
 is.char <- function(x) nchar(as.character(x)) == 1
-
 
 # Decoding one record from the dictionary
 # vtype : variable type
@@ -1095,6 +1101,8 @@ miss2NA3 <- function(df, gmc, exceptions = NULL){
 #setwd("C:/Users/ob3587/Dropbox/UT Austin PM/EvoLearn/DataToProcess")
 #setwd("/home/maciej/Documents/R-PRJ/Oskar/DataToProsess4")
 
+## Part3: Load files and make DB----
+
 DIR <- getwd() #please set DIR as a parent directory to the database so the base can be searched. 
 #Put rules in DIR directory
 FILE <- 'RULES.xlsx'
@@ -1116,8 +1124,20 @@ DBase <- LOAD_DB(FILES$PATH, TREE = TREE)
 #! be careful if there more than one functional sheets per xlsx, 
 #! code below may not work then. 
 DBase
+
 #########################################################################################################3
-# Check PIDs
+# Check files for mistakes----
+#########################################################################################################3
+# fully automated
+
+#This processes whole database
+# use save_unmarked='always' if you want the old functionality
+AutoTest(FILES, TREE, save_marked='on_errors')
+warnings()
+
+
+#########################################################################################################3
+# Check PIDs----
 #########################################################################################################3
 
 # !!! if there is no PID then it uses PID_Student
@@ -1197,7 +1217,7 @@ as.data.frame(PIDTEST)
 
 
 #########################################################################################################3
-# Exemplary merging
+# Part5: merging----
 #########################################################################################################3
 
 # !!! if there is no PID then it uses PID_Student
@@ -1228,7 +1248,7 @@ DBs$Queensland
 # DF<-fast.merge.list(list(DF1,DF2,DF3),by=c('PID','PID_location','location'))
 # as.data.table(DF)
 
-####################################################################
+#
 ### Master file for Lydia ----
 
 #DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age','loc')])
@@ -1251,7 +1271,7 @@ DBs$Queensland
 # as.data.table(DF)
 # View(DF)
 
-#####################################################################
+######################################################################
 #  Sabrina Output file! ~ 21OCT2019 ---- 
 
 # DF1<- as.data.frame(DB$PIDreg_noname)
@@ -1729,7 +1749,7 @@ td=format(lubridate::today(), "%Y%m%d")
 # xlsx::write.xlsx(DF_QTHTKS_mf,paste('DF_QTHTKS_MasterFile_',td,sep='','.xlsx'),sheetName="QTHTKS_mf",row.names = 'FALSE')
 
 # xlsx::write.xlsx(DF_biodem,paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",row.names = 'FALSE')
-library(openxlsx)
+
 #openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'))
 # write.xlsx(DF_catvbaka, paste('DF_CATVBAKA_MasterFile_',td,sep='','.xlsx'),sheetName="CATVB_mf",
 #           showNA = FALSE, row.names = 'FALSE')
@@ -1747,16 +1767,6 @@ openxlsx::write.xlsx(DF1_plants, file = paste('DF_plantlists',td,sep='','.xlsx')
 #readr::write_csv(DF2,paste('Sabrina_Data_',td,'.csv'),na='')
 #write.xlsx(DF,paste('Sabrina_Data_',td,'.xlsx'))
 
-#########################################################################################################3
-# Check for mistakes
-#########################################################################################################3
-
-# fully automated, ----
-
-#This process whole database
-# use save_unmarked='always' if you want the old functionality
-AutoTest(FILES, TREE, save_marked='on_errors')
-warnings()
 
 
 
