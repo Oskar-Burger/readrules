@@ -1,0 +1,938 @@
+********************************************************************************
+log created at: Mon Feb 28 10:00:34 2022
+********************************************************************************
+ 
+********************************************************************************
+Results of the check: 
+********************************************************************************
+ 
+AS_AG_CATVB_21JAN2022.xlsx  :  CHECK !
+BA_SP_ACAKN_04FEB2021.xlsx  :  CHECK !
+EC_BR_ACAKN_04SEP2020.xlsx  :  CHECK !
+EC_BR_CATVB_12NOV2021.xlsx  :  CHECK !
+FA_GI_CATVB_21JAN2022.xlsx  :  CHECK !
+MA_GP_CATVB_02DEC2021.xlsx  :  CHECK !
+MA_JW_ACAKN_15APR2020.xlsx  :  CHECK !
+MM_FF_ACAKN_24JUN2020.xlsx  :  CHECK !
+MM_FF_CATVB_19DEC2021.xlsx  :  CHECK !
+NA_SG_ACAKN_22FEB2022.xlsx  :  CHECK !
+NB_SG_CATVB_25JAN2022.xlsx  :  CHECK !
+SC_GI_ACAKN_01MAY2020.xlsx  :  CHECK !
+SP_AFA_CATVB_18JAN2022.xlsx  :  CHECK !
+SP_VD_ACAKN_22APR2020.xlsx  :  CHECK !
+SY_MG_ACAKN_11DEC2020.xlsx  :  CHECK !
+SY_MG_CATVB_20DEC2021.xlsx  :  CHECK !
+TA_EM_ACAKN_13APR2020.xlsx  :  CHECK !
+TA_EM_CATVB_22NOV2021.xlsx  :  CHECK !
+WA_CW_ACAKN_24NOV2021.xlsx  :  CHECK !
+WA_CW_CATVB_03DEC2021.xlsx  :  CHECK !
+ 
+********************************************************************************
+List of files with number of problems: 
+********************************************************************************
+ 
+ 
+********************************************************************************
+List of files with warnings: 
+********************************************************************************
+ 
+--> 
+AS_AG_CATVB_21JAN2022.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/AS/AS_AG_CATVB_21JAN2022.xlsx
+Variable ...1 is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+BA_SP_ACAKN_04FEB2021.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable mult_div...19 is not present in both database and dictionary TREE. Please check spelling.
+Variable mult_div...20 is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_ACAKN_04SEP2020.xlsx :
+Variable time_start is not present in both database and dictionary TREE. Please check spelling.
+Variable time_end is not present in both database and dictionary TREE. Please check spelling.
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable time_md is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+EC_BR_CATVB_12NOV2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/EC/EC_BR_CATVB_12NOV2021.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+FA_GI_CATVB_21JAN2022.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/FA/FA_GI_CATVB_21JAN2022.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_GP_CATVB_02DEC2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/MA/MA_GP_CATVB_02DEC2021.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MA_JW_ACAKN_15APR2020.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable time_md is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_length is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_ACAKN_24JUN2020.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable time_md is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+MM_FF_CATVB_19DEC2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/MM/MM_FF_CATVB_19DEC2021.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NA_SG_ACAKN_22FEB2022.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable time_md is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+NB_SG_CATVB_25JAN2022.xlsx :
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SC_GI_ACAKN_01MAY2020.xlsx :
+Variable time_start is not present in both database and dictionary TREE. Please check spelling.
+Variable time_end is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_AFA_CATVB_18JAN2022.xlsx :
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SP_VD_ACAKN_22APR2020.xlsx :
+Variable error_count is not present in both database and dictionary TREE. Please check spelling.
+Variable error_loc is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable error_comments2 is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_ACAKN_11DEC2020.xlsx :
+Variable time_start is not present in both database and dictionary TREE. Please check spelling.
+Variable time_end is not present in both database and dictionary TREE. Please check spelling.
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable time_md is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+SY_MG_CATVB_20DEC2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/SY/SY_MG_CATVB_20DEC2021.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_ACAKN_13APR2020.xlsx :
+Variable experimenter is not present in both database and dictionary TREE. Please check spelling.
+Variable time_as is not present in both database and dictionary TREE. Please check spelling.
+Variable time_md is not present in both database and dictionary TREE. Please check spelling.
+Variable alge is not present in both database and dictionary TREE. Please check spelling.
+Variable item_skipped is not present in both database and dictionary TREE. Please check spelling.
+Variable early_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_prompt_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable ob_prompt is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke is not present in both database and dictionary TREE. Please check spelling.
+Variable exp_spoke_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable order_mistake is not present in both database and dictionary TREE. Please check spelling.
+Variable skip_pic is not present in both database and dictionary TREE. Please check spelling.
+Variable late_stop is not present in both database and dictionary TREE. Please check spelling.
+Variable wrong_item is not present in both database and dictionary TREE. Please check spelling.
+Variable repeat_item is not present in both database and dictionary TREE. Please check spelling.
+Variable back_noise is not present in both database and dictionary TREE. Please check spelling.
+Variable watched is not present in both database and dictionary TREE. Please check spelling.
+Variable distract_stim is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption is not present in both database and dictionary TREE. Please check spelling.
+Variable interruption_comments is not present in both database and dictionary TREE. Please check spelling.
+Variable stimuli_visible is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_id is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_day is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_month is not present in both database and dictionary TREE. Please check spelling.
+Variable qaqc_year is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues is not present in both database and dictionary TREE. Please check spelling.
+Variable other_issues_comment is not present in both database and dictionary TREE. Please check spelling.
+Variable score_change is not present in both database and dictionary TREE. Please check spelling.
+Variable general_qaqc_comments is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+TA_EM_CATVB_22NOV2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/TA/TA_EM_CATVB_22NOV2021.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_ACAKN_24NOV2021.xlsx :
+Variable time_start is not present in both database and dictionary TREE. Please check spelling.
+Variable time_end is not present in both database and dictionary TREE. Please check spelling.
+ 
+--> 
+WA_CW_CATVB_03DEC2021.xlsx :
+Thre is more than one sheet in the file: C:/Users/ob3587/Documents/UTAustin PM/githubprojects/evolearn/readrules/Data Sheets .xls/WA/WA_CW_CATVB_03DEC2021.xlsx
+Variable RA_initials is not present in both database and dictionary TREE. Please check spelling.
+Variable entry_date is not present in both database and dictionary TREE. Please check spelling.
+Variable fieldsite is not present in both database and dictionary TREE. Please check spelling.
+Variable type is not present in both database and dictionary TREE. Please check spelling.
+Variable time is not present in both database and dictionary TREE. Please check spelling.
+Variable n is not present in both database and dictionary TREE. Please check spelling.
+Variable item_1 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_2 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_3 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_4 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_5 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_6 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_7 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_8 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_9 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_10 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_11 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_12 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_13 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_14 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_15 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_16 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_17 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_18 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_19 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_20 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_21 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_22 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_23 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_24 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_25 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_26 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_27 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_28 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_29 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_30 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_31 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_32 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_33 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_34 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_35 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_36 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_37 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_38 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_39 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_40 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_41 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_42 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_43 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_44 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_45 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_46 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_47 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_48 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_49 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_50 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_51 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_52 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_53 is not present in both database and dictionary TREE. Please check spelling.
+Variable item_54 is not present in both database and dictionary TREE. Please check spelling.
+Variable repeats is not present in both database and dictionary TREE. Please check spelling.
+ 

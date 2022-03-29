@@ -1065,10 +1065,11 @@ postmerge<-function(DF, varspos, newvar){
   DF
 }
 
-
-
-
-
+miss2NA3 <- function(df, gmc, exceptions = NULL){
+  if (length(exceptions)) checkexceptions(exceptions, colnames(df))
+  FUN <- funs(replace(., . %in% gmc, NA))
+  POS <- which(!(colnames(df) %in% exceptions))
+  df %>% mutate_at(.vars = POS, .funs = FUN) }
 
 #########################################################################################################3
 #########################################################################################################3
@@ -1191,6 +1192,7 @@ as.data.frame(PIDTEST)
 # write.xlsx(PIDTEST, 'PIDRES_SC_demobio_12DEC2021.xlsx', sheetName = 'SC_PIDS')
 # write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_28FEB2022.xlsx', sheetName = 'DemoBio_PIDS')
 # write.xlsx(PIDTEST, 'PIDRES_CATVBACAKN_28FEB2022.xlsx', sheetName = 'CATVB_PIDS')
+# write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_16MAR2022.xlsx', sheetName = 'DemoBio_PIDS')
 
 
 
@@ -1412,7 +1414,10 @@ DBs$Queensland
 #DF = DF_Sabrina
 #checking for mistakes, but use check.PID() and correct for mistakes before
 
+#############################################
 ## Demo Bio Master Master File !! ----
+#############################################
+
 adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx") %>%
   mutate(PartSurv = paste('X',PartSurv,sep = ""))
 chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx") %>%
@@ -1430,8 +1435,10 @@ DF2 <- as.data.frame(DB$Biometric[]) %>%
   select(-c(contains('...'),seat_height,height_sit))
 DF3 <- as.data.frame(DB$AdInt[])
 DF4 <- as.data.frame(DB$ChildInterview[])
-DF5 <- as.data.frame(DB$Partsurvey)
-
+DF5 <- as.data.frame(DB$Partsurvey) %>% 
+  mutate(par_check = replace_na(par_check, '0')) #%>%
+#  filter(par_check != 1) # removes repeat PIDs for EC and SY where parents completed a mini online surve
+# later fixed this a different way 
 
 # rename child int
 setnames(DF4, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
@@ -1470,6 +1477,184 @@ DF_biodem = DF_biodem %>% mutate(cmb_age = replace(cmb_age, cmb_age < 0 , NA),
                                  yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
                                  yrs_school = coalesce(yrs_school, adint_yrsschool))
 
+##################################################
+## DemoBio Mater, experiment with complex merge ----
+##################################################
+
+# remove factors from data.frame
+factorsAsStrings<-function(df){
+  i <- sapply(df, is.factor)
+  df[i] <- lapply(df[i], as.character)
+  df
+}
+
+# correct match.list, see below
+organize.mt <- function(match.list){
+  mtn <- names(match.list)
+  if (!length(mtn)) stop('match.list must be a named list.', call. = NA)
+  if (any(mtn %in% c('',' ',NA))) stop('Wrong names in match.list.', call. = NA)
+  for (i in seq_along(match.list)) match.list[[i]] <- unique(c(mtn[i],match.list[[i]]))
+  match.list
+}
+
+create.match.list<-function(An, Bn, key){
+  key <- factorsAsStrings(key)
+  if (is.data.frame(An)) An <- colnames(An) else stop('An must be a data.frame',call.=FALSE)
+  if (is.data.frame(Bn)) Bn <- colnames(Bn) else stop('Bn must be a data.frame',call.=FALSE)
+  key <- data.frame(key)
+  if(!('NewName' %in% colnames(key))) {
+    warning('No "NewName" column in the key file, using first column of the key to generate names or merged variables.', call.=NA)
+    key$NewName <- key[,1]
+  }  
+  colnames(key)[1:2]=c('A','B')
+  key <- key[,c('A','B','NewName')]
+  # check for duplicates
+  AB <- intersect(An,Bn)
+  if (length(AB)) for (j in seq_along(AB)) {
+    if (!(AB[j] %in% key[,1]) && !(AB[j] %in% key[,2])) key<-rbind(key, rep(AB[j],3))
+    warning(paste(AB[j], 'is present in both data frames, but not in the key. It was added to the match list.'),call.=FALSE)
+  }
+  if (any(duplicated(key[,1]))) stop('Duplicated names found in the first column of the key file.',call. = NA)
+  if (any(duplicated(key[,2]))) stop('Duplicated names found in the second column of the key file.',call. = NA)
+  indA<-key[,1] %in% c(An)
+  indB<-key[,2] %in% c(Bn)
+  if (!all(indA)) warning(paste(paste(key[which(!indA),1],collapse = ', '),'variable(s) declared in the first column of the key file not present in the first data frame.'), call.=NA) 
+  if (!all(indB)) warning(paste(paste(key[which(!indB),2],collapse = ', '),'variable(s) declared in the second column of the key file not present in the second data frame.'), call.=NA) 
+  # check for cross
+  indC <- (key[,1] %in% key[,2]) & (key[,2] %in% key[,1]) & (key[,2] != key[,1])
+  if (any(indC)) {
+    print(key[which(indC),])
+    stop('The "cross-nameing" found. Please rename variables manually.',call.=NA)
+  }
+  nkey <- key[which(indA&indB&(!indC)),]
+  indA1  <- !(An %in% key[,1])
+  indB1  <- !(Bn %in% key[,2])
+  A1  <- An[which(indA1)]
+  B1  <- Bn[which(indB1)]
+  A1l <- as.list(A1)
+  B1l <- as.list(B1)
+  names(A1l) <- A1
+  names(B1l) <- B1
+  nkeyl <- lapply(seq_len(nrow(nkey)),function(k) nkey[k,1:2])
+  names(nkeyl)<-nkey$NewName
+  c(A1l,B1l,nkeyl)
+}
+
+# A, B - data frames to bind
+# match.list - a list with dictionary (see below)
+# gr.lab - a name of the grouping variable
+# gr.nam - names of used data.frames to be placed in grouping variable
+# remove.empty - remove unused variables from match.list
+complex_rbind<-function(A, B, match.list, gr.lab='gr', gr.nam=c('a','b'), remove.empty=TRUE, debug=FALSE){
+  A <- factorsAsStrings(A)
+  B <- factorsAsStrings(B)
+  match.list <- organize.mt(match.list)
+  if (!is.data.frame(A)) stop('A must be a data.frame')
+  if (!is.data.frame(B)) stop('B must be a data.frame')
+  cA <- colnames(A)
+  cB <- colnames(B)
+  umt <- c(unlist(match.list),gr.lab)
+  if (!all(cA %in% umt)) stop('Some variables of data.frame A are not present in match.list', call. = NA)
+  if (!all(cB %in% umt)) stop('Some variables of data.frame B are not present in match.list', call. = NA)
+  emptyA <- rep(NA,nrow(A))
+  emptyB <- rep(NA,nrow(B))
+  if  (gr.lab %in% cA) grA <- A[[gr.lab]] else grA<-rep(gr.nam[1], nrow(A))
+  if  (gr.lab %in% cB) grB <- B[[gr.lab]] else grB<-rep(gr.nam[2], nrow(B))
+  gr <- c(as.character(grA), as.character(grB))
+  res <- data.frame(gr=gr)
+  colnames(res) <- gr.lab
+  for (i in seq_along(match.list)){
+    if (debug) {
+      cat('**',i,'**\n')
+      print(match.list[[i]])
+    }
+    ni <- names(match.list)[i]
+    iA <- which(match(cA, match.list[[i]], nomatch = 0) > 0)
+    if (!length(iA)) tmpA<-emptyA else {
+      if(length(iA)>1) stop('Replicated variables in A or cross-merging.',call. = NA)
+      tmpA<-A[,iA]
+    }
+    iB <- which(match(cB, match.list[[i]], nomatch = 0) > 0)
+    if (!length(iB)) tmpB<-emptyB else {
+      if(length(iB)>1) stop('Replicated variables in B or cross-merging.',call. = NA)
+      tmpB<-B[,iB]
+    }
+    tmp <- data.frame(V=c(tmpA,tmpB))
+    names(tmp) <- ni
+    if (!(remove.empty && all(is.na(tmp)))) res <- cbind(res, tmp)
+  }
+  res
+}
+
+#Previously, we renamed first, but that was perhaps a mistake 
+# lets reorient the DFs 
+DF1 <- as.data.frame(DB$PIDreg_noname[])
+DF2 <- as.data.frame(DB$Biometric[]) %>% 
+  select(-c(contains('...'),seat_height,height_sit))
+DF3 <- as.data.frame(DB$AdInt[])
+DF4 <- as.data.frame(DB$ChildInterview[])
+DF5 <- as.data.frame(DB$Partsurvey) %>% 
+  mutate(par_check = replace_na(par_check, '0')) %>%
+  filter(par_check != 1) # removes repeat PIDs for
+# EC and SY where parents completed a mini online survey 
+
+
+
+adpartkey = data.frame(
+            A=adultcollinks$AdultInt,
+            B=adultcollinks$PartSurv,
+            NewName=adultcollinks$NewName)
+
+match.list.ad <- create.match.list(DF3, DF5, adpartkey)
+DF6 = complex_rbind(DF3, DF5, match.list.ad, gr.nam=c("AdInt","Partsurvey"), gr.lab='Task')
+
+chipartkey = data.frame(
+  A=chicollinks$ChildInt,
+  B=chicollinks$PartSurv,
+  NewName=chicollinks$NewName)
+
+match.list.chi <- create.match.list(DF4, DF5, chipartkey)
+
+DF7 = complex_rbind(DF4, DF5, match.list.chi, gr.nam=c("Chint","Partsurvey"), gr.lab='Task')
+
+demogbiolist = list(DF1,DF2,DF6, DF7) # < replace DF3 - 5 with newly created merged DFs
+demogbiolist = rename.duplicated(demogbiolist, extensions=c('PIDr','BIO','adpart','chipart'), 
+                                 ignore=c('PID','location','PID_location'))
+
+DF_biodem = fast.merge.list(demogbiolist, by=c('PID','PID_location','location'))
+
+doubchecks = table(DF_biodem$PID,DF_biodem$location)
+xx = as.data.frame(doubchecks)
+view(xx %>% filter(Freq > 1))
+
+which(doubchecks > 1)
+
+
+
+
+t1<-sum(duplicated(DF_biodem$PID)) 
+t2<-sum(duplicated(DF_biodem$PID_location)) 
+if (t1>0) warning('The same PID found in two or more different locations. Is this possible?',call.=FALSE)
+if (t2>0) warning('Several copies of the same PID found in the same task and location! ',call.=FALSE)
+
+
+# DT <- as.data.table(DF_biodem)
+# DT = DT[,which(unlist(lapply(DT, function(x)!all(is.na(x))))),with=F]
+
+not_all_na <- function(x) any(!is.na(x))
+DF_biodem = DF_biodem %>% select(where(not_all_na)) # doesn't remove as many as hoped.
+
+DF_biodem = DF_biodem %>% mutate(cmb_age = replace(cmb_age, cmb_age < 0 , NA),
+                                 X10b_schl_go_age = replace(X10b_schl_go_age, X10b_schl_go_age < 0 , NA),
+                                 Q20a_schlyrs = replace(Q20a_schlyrs, Q20a_schlyrs < 0 , NA),
+                                 psurv_yrsschol = as.numeric(cmb_age)  - as.numeric(X10b_schl_go_age)) %>%
+  mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
+         chint_yrsschool = readr::parse_number(Q6a),
+         chint_yrsschool = replace(chint_yrsschool, chint_yrsschool < 0, NA),
+         adint_yrsschool = readr::parse_number(Q20a_schlyrs),
+         yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
+         yrs_school = coalesce(yrs_school, adint_yrsschool))
+
 
 
 ##################################################
@@ -1481,7 +1666,18 @@ DF_biodem = DF_biodem %>% mutate(cmb_age = replace(cmb_age, cmb_age < 0 , NA),
 # DF1 <- DF1 %>% select(-contains('item'),-comments) %>% 
 #   pivot_wider(., id_cols = c(PID,location,task,PID_long,PID_task,PID_location,RA_initials),
 #                            names_from = type, values_from = c(n, time, repeats))
-# 
+
+# make a version of CatVerb that has the items. 
+DF1 <- as.data.frame(DB$CategorVerb[])
+DF1 <- DF1 %>% select(-c(`...1`:fieldsite),-c(comments,task,PID_long,PID_task,RA_initials))
+DF1 <- DF1 %>%  
+pivot_wider(., id_cols = c(PID,location,PID_location),
+            names_from = type, values_from = c(item_1:item_54), names_glue = "{type}_{.value}")
+DF1 = miss2NA3(DF1,gmc)
+DF1_animals = DF1 %>% select(-contains('plants'))
+DF1_plants = DF1 %>% select(-contains('animals'))
+
+
 # DF2 <- as.data.frame(DB$AcaKnowl[])
 # DF2 <- DF2 %>% select(-c(day:filmed), -c(comments:late_stop), -c(back_noise:general_qaqc_comments),
 #                       -c(interruption_length:other_issues_comment))
@@ -1540,7 +1736,10 @@ library(openxlsx)
 
 #write.xlsx(DF_biodem, paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",
  #          showNA = FALSE, row.names = 'FALSE')
-openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'))
+#openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'), sheetName="BioDem_all")
+openxlsx::write.xlsx(DF1_animals, file = paste('DF_animallists',td,sep='','.xlsx'), sheetName="animals_all")
+openxlsx::write.xlsx(DF1_plants, file = paste('DF_plantlists',td,sep='','.xlsx'), sheetName="plants_all")
+
 
 
 #str(DF2)
