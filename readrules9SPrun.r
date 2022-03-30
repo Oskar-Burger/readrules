@@ -2,8 +2,8 @@
 #                                                            #
 #     Base code for:                                         #
 #     Editing EvoLearn Project Data                          #
-#     Version: 11                                            #
-#     Last edited: 29 MAR 2022                               #
+#     Version: 2.0                                           #
+#     Last edited: 17APR2019                                 #
 #                                                            #
 ##############################################################
 
@@ -17,10 +17,8 @@
 #     5. merges datafiles into master files for analysis     #
 ##############################################################
 
-## Part 1: preliminaries---- 
-
 # clean workspace if necessary
-rm(list = ls()) # we keep this 
+rm(list = ls())
 
 # load libraries
 library(readxl)
@@ -33,37 +31,6 @@ library(xlsx)
 library(data.table)
 library(reshape2)
 library(tibble)
-library(tidyverse)
-library(openxlsx)
-
-# # A=data.frame(aa=1:5,bb=1:5,dd=1:5)
-# # B=data.frame(aa=6:9,cc=6:9,ee=6:9)
-# # C=data.frame(aa=4:9,ff=4:9,ee=4:9)
-# rbindfill<-function(A, B){
-#   A <- as.data.frame(A)
-#   B <- as.data.frame(B)
-#   Ac <- colnames(A)
-#   Bc <- colnames(B)
-#   rc <- unique(c(Ac,Bc))
-#   Aempty <- rep(NA,nrow(A))
-#   Bempty <- rep(NA,nrow(B))
-#   forcefill<-function (vec, empty) if (length(vec)) vec else empty
-#   as.data.frame(sapply(rc, function(k) c(forcefill(A[,which(Ac==k)],Aempty),forcefill(B[,which(Bc==k)],Bempty))))
-# }
-# 
-# # DFlist=list(A,B,C)
-# rbindfilllist<-function(DFlist){
-#   if (length(DFlist)>1){
-#     outlist <- as.data.frame(DFlist[[1]])
-#     for(k in 2:length(DFlist)){
-#       outlist <- as.data.frame(rbindfill(outlist, DFlist[[k]]))
-#     }
-#     outlist
-#   } else DFlist
-# }
-
-## Part 2: functions---- 
-# all functions go in this section 
 
 # define global.missing.codes:
 gmc = c(-(1:6),'NA','.') 
@@ -150,6 +117,7 @@ cor.time <- function(x, ind = is.time(x, maxh = maxh), maxh = 23, add.zero.h=FAL
 
 
 is.char <- function(x) nchar(as.character(x)) == 1
+
 
 # Decoding one record from the dictionary
 # vtype : variable type
@@ -536,17 +504,17 @@ list2time<-function(lists){
   })
 }
 
-process.one.file<-function(path, TREE, TREE.FILE, TREE.DIR, subdir='correction', save_marked = 'on_errors') {
+process.one.file<-function(path, TREE, TREE.FILE, TREE.DIR, subdir='correction') {
   if (tolower(substr(path,nchar(path)-3,nchar(path)))!='xlsx') stop('xlsx file is needed.',call. = FALSE) 
   file_ <- basename(path)
   dir_ <- dirme(dirname(path))
   if (length(subdir) && nchar(subdir)>0) {
     subdir <- dirme(subdir,FALSE, FALSE)
-    cat('creating new dir if not exists\n')
+    cat('creating new dir\n')
     ndir_ <- paste(dir_,subdir,sep='') 
   } else ndir_ <- dir_
   
-  dir.create(ndir_, showWarnings = FALSE)
+  dir.create(ndir_,showWarnings = FALSE)
   npath <- paste(unclass(ndir_), unclass(file_), sep='')
   noext <- substr(npath,1, nchar(npath)-5)
   if (missing(TREE)) 
@@ -568,13 +536,11 @@ process.one.file<-function(path, TREE, TREE.FILE, TREE.DIR, subdir='correction',
   for (j in seq_along(datalisttypes))  {
     ind <- grepl('time',datalisttypes[[j]],fixed=TRUE) | grepl('date',datalisttypes[[j]],fixed=TRUE)
     datalisttypes[[j]][ind]<-'list'
-    #datalisttypes[[j]][!ind]<-'guess'
-    datalisttypes[[j]][!ind]<-'text'
+    datalisttypes[[j]][!ind]<-'guess'
   }
   datalist <- lapply(seq_along(Sh.names), function(k) readxl::read_xlsx(path, sheet=Sh.ind[k], col_types=datalisttypes[[k]]))
   for (j in seq_along(datalisttypes))  {
-    if (any(datalisttypes[[j]]=='list'))
-      datalist[[j]][,datalisttypes[[j]]=='list'] <- list2time(datalist[[j]][,datalisttypes[[j]]=='list'])
+    datalist[[j]][,datalisttypes[[j]]=='list'] <- list2time(datalist[[j]][,datalisttypes[[j]]=='list'])
   }
   
   indsh <- sapply(datalist,NROW) > 0  #find empty sheets
@@ -592,30 +558,19 @@ process.one.file<-function(path, TREE, TREE.FILE, TREE.DIR, subdir='correction',
   #if (length(asheets)>1) warning(paste('Thre is more than one sheet in the file:',path,'only first was taken!'))
   if (length(asheets)==0) stop(paste('No functional sheets in the file',path),call. = FALSE)
   
-  for (k in seq_along(asheets)) print(asheets[[k]], filename = paste(noext,'_',k,'_summary.txt',sep=''), open = c('w','a')[1+(k>1)])
+  for (k in seq_along(asheets)) print(asheets[[k]], filename = paste(noext,'_summary.txt',sep=''), open = c('w','a')[1+(k>1)])
   marked <-  lapply(asheets, update, mark.mistakes = TRUE)
   unmarked <-  lapply(asheets,update, mark.mistakes = FALSE)
-  
-  if (length(asheets)==1) nEr <- sum(na.omit(as.vector(as.data.frame(marked)=='!PROBLEM!'))) else {
-    nEr = 0
-    for (k in seq_along(asheets)) nEr <- nEr + sum(na.omit(as.vector(as.data.frame(marked[[k]])=='!PROBLEM!')))
-  }
-  
-  if ((save_marked=='always') || ((save_marked=='on_errors') & (nEr>0))) {
-    xlsx::write.xlsx2(marked[[1]],paste(noext,'_corrected_marked.xlsx',sep=''),sheetName=Sh.names[1], row.names=FALSE)
-    if (length(marked)>1) 
-      for (k in 2:length(marked)) 
-        xlsx::write.xlsx2(marked[[k]],paste(noext,'_corrected_marked.xlsx',sep=''),append=TRUE, sheetName=Sh.names[k], row.names=FALSE)
-  }
-  
+  xlsx::write.xlsx2(marked[[1]],paste(noext,'_corrected_marked.xlsx',sep=''),sheetName=Sh.names[1], row.names=FALSE)
+  if (length(marked)>1) 
+    for (k in 2:length(marked)) 
+      xlsx::write.xlsx2(marked[[k]],paste(noext,'_corrected_marked.xlsx',sep=''),append=TRUE, sheetName=Sh.names[k], row.names=FALSE)
   xlsx::write.xlsx2(unmarked[[1]],paste(noext,'_corrected_unmarked.xlsx',sep=''),sheetName=Sh.names[1], row.names=FALSE)
   if (length(unmarked)>1) 
     for (k in 2:length(unmarked)) 
       xlsx::write.xlsx2(unmarked[[k]],paste(noext,'_corrected_unmarked.xlsx',sep=''),append=TRUE, sheetName=Sh.names[k], row.names=FALSE)
-  
   invisible(list(marked=marked, unmarked=unmarked))
 }
-
 
 FindDataDirs<-function(MainDir="/home/maciej/Documents/R-PRJ/Oskar", DataDirName="Data Sheets .xls"){
   pre <- list.files(MainDir, DataDirName, recursive=TRUE, full.names=TRUE, include.dirs=TRUE) #search
@@ -637,10 +592,9 @@ FindDataFiles<-function(MainDir="/home/maciej/Documents/R-PRJ/Oskar", DataDirNam
   return(Mat)
 }
 
-check.name<-function(path, ltab = matrix(c('Emily','Frankie','Gairan','Julia', 'Sarah','Scott','thinkery','Vivian','Oskar','Sabrina','Bruce','Micah','Gordon','Laura', 'Ciara','Gordon',# researcher first name
-                                           'EM','FF','GP','JW', 'SP','SC','BR','VD','OB','SG','BR','MG','GI','LS', 'CW','GI',# researcher initial
-                                           'TA','MM','MA','MA','BA','AS','TH','SP','FD','NB','EC','SY','FA','YP','WA','SC'),ncol=3), back=1) # fieldsite initial. these must all match up! 
-                                            { 
+check.name<-function(path, ltab = matrix(c('Emily','Frankie','Gairan','Sarah','Scott','thinkery','Vivian','Oskar',
+                                           'EM','FF','GP','SP','SC','BR','VD','OB',
+                                           'TA','MM','MA','BA','AS','TH','SP','FD'),ncol=3), back=1){
   if (!length(ncol(ltab)) || ncol(ltab)!=3) stop('Wrong ltab',call.=FALSE)
   ltab <- toupper(ltab)
   fi <- toupper(basename(path))
@@ -658,12 +612,12 @@ load.raw.file<-function(path, TREE, back=1){
   #this function should be run once all mistakes are corrected using process.one.file
   
   location <- check.name(path, back=back)
-  
+
   #partialy repeated what process.one.file code
   #can be consolidated later
   
   Sh.names <- get.dictionary.names(path)  
-  if (length(Sh.names)>1) warning(paste('There is more than one sheet in the file:',path),call. = FALSE)
+  if (length(Sh.names)>1) warning(paste('Thre is more than one sheet in the file:',path),call. = FALSE)
   Sh.ind <- seq_along(Sh.names)
   datalisttypes <- lapply(seq_along(Sh.names), function(k) colnames(readxl::read_xlsx(path, sheet=k, col_types='text')))
   ins <- sapply(datalisttypes, length)>0
@@ -674,13 +628,11 @@ load.raw.file<-function(path, TREE, back=1){
   for (j in seq_along(datalisttypes))  {
     ind <- grepl('time',datalisttypes[[j]],fixed=TRUE) | grepl('date',datalisttypes[[j]],fixed=TRUE)
     datalisttypes[[j]][ind]<-'list'
-    #datalisttypes[[j]][!ind]<-'guess'
-    datalisttypes[[j]][!ind]<-'text'
+    datalisttypes[[j]][!ind]<-'guess'
   }
   datalist <- lapply(seq_along(Sh.names), function(k) readxl::read_xlsx(path, sheet=Sh.ind[k], col_types=datalisttypes[[k]]))
   for (j in seq_along(datalisttypes))  {
-    if (any(datalisttypes[[j]]=='list')) 
-      datalist[[j]][,which(datalisttypes[[j]]=='list')] <- list2time(datalist[[j]][,which(datalisttypes[[j]]=='list')])
+    datalist[[j]][,datalisttypes[[j]]=='list'] <- list2time(datalist[[j]][,datalisttypes[[j]]=='list'])
   }
   
   indsh <- sapply(datalist,NROW) > 0  #find empty sheets
@@ -717,58 +669,21 @@ LOAD_DB <- function (path_list, TREE, back=1, trace=TRUE){
   })
 }
 
-check.PID <- function(DBase, 
-                      AlternativePID=c('student','teacher'),
-                      poo = read.csv('PID_TEST_07FEB2020.csv'), 
-                      tasks = read.csv('taskabbrevs.csv'), 
-                      TREE, 
-                      show.miss.pids=20, 
-                      show.new.pids=20,
-                      max.pid.digit=8){
+check.PID <- function(DBase, poo = read.csv('PID_TEST.csv'), tasks = read.csv('taskabbrevs.csv'), TREE, show.miss.pids=20, show.new.pids=20){
   
   DB.data <- sapply(DBase,'[')
   DB.location <- sapply(DBase,function(k2) attr(k2,'location'))
   DB.names <- names(DB.data)
-  if (AlternativePID[1]=='student') {
-    AlternativePID1<-'PID_student'
-    AlternativePID2<-'PID_teacher'
-  } else if (AlternativePID[1]=='teacher') {
-    AlternativePID2<-'PID_student'
-    AlternativePID1<-'PID_teacher'
-  } else stop('Unknown AlternativePID')
-  getPID <- function(k) if (suppressWarnings(length(k$PID))) k$PID else if (length(k[[AlternativePID1]])) k[[AlternativePID1]] else if (length(k[[AlternativePID2]])) k[[AlternativePID2]] else stop('No PID in data file.',call.=FALSE) 
-  aPID <- data.frame(rbindlist(lapply(seq_along(DB.location), 
-                                      function(k) data.frame(PID=getPID(DB.data[[k]]), 
-                                                             task=DB.names[k], 
-                                                             Location = DB.location[k],
-                                                             Position=rownames(DB.data[[k]]),
-                                                             stringsAsFactors = FALSE))),
-                     stringsAsFactors = FALSE)
+  
+  getPID <- function(k) if (suppressWarnings(length(k$PID))) k$PID else if (length(k$PID_student)) k$PID_student else stop('No PID in data file.',call.=FALSE) 
+  aPID <- rbindlist(lapply(seq_along(DB.location), function(k) data.frame(PID=getPID(DB.data[[k]]), task=DB.names[k], Location = DB.location[k])))
+  aPID <- aPID[!is.na(aPID$PID),]
   aPID$PID <- as.character(aPID$PID)
-  if (any(is.na(aPID$PID))) {
-    message('NA found in PID',appendLF = TRUE)
-    print(aPID[which(is.na(aPID$PID)),],row.names = FALSE)
-    warning('NA found in PID')
-    aPID <- aPID[which(!is.na(aPID$PID)),]
-  }
-  trim<-function(x) gsub("[[:blank:]]", "", x)
-  ncharpid<-nchar(trim(aPID$PID))==0 
-  if (any(ncharpid)) {
-    message('Empty PID found',appendLF = TRUE)
-    print(aPID[which(ncharpid),],row.names = FALSE)
-    warning('Empty PID found')
-    aPID <- aPID[which(!ncharpid),]
-  }
   
   #check if PIDS are not comments
-  longpid<-nchar(as.character(aPID$PID))>max.pid.digit
-  if (any(longpid)){
-    aPID$PID[nchar(aPID$PID)>50]<-paste(substr(aPID$PID[nchar(aPID$PID)>50],1,50),'...')
-    message('Too long PID found',appendLF = TRUE)
-    print(aPID[which(longpid),],row.names = FALSE)
-    warning('Too long PID found')
-    aPID<-aPID[which(!longpid),]
-  }
+  max.pid.digit <- 8
+  aPID[nchar(as.character(aPID$PID))>max.pid.digit,]
+  aPID<-aPID[nchar(as.character(aPID$PID))<=max.pid.digit,]
   
   #check tasks names
   aTask <- unique(aPID$task)  #DB task
@@ -832,13 +747,7 @@ check.PID <- function(DBase,
   if (any(colSums(table(aPID$PID, paste(aPID$PID, aPID$Location,sep='_'))>0)!=1)) warning('One PID in many locations.',call.=FALSE)
   
   #some smart reshape ;-)
-  aPID$Location<-as.factor(aPID$Location)
-  if (length(levels(aPID$Location))>1) PIDtest <- suppressMessages(reshape2::dcast(aPID, PID+Location ~ task)) else {
-    tbl <- table(aPID$PID, aPID$task)
-    class(tbl)<-'matrix'
-    PIDtest <- cbind(data.frame(PID=rownames(tbl), Location=levels(aPID$Location)[1]),tbl)
-    rownames(PIDtest)<-seq_len(nrow(tbl))
-  }
+  PIDtest <- suppressMessages(reshape2::dcast(aPID, PID+Location ~ task))
   
   #check if a PID occurs two or more times in the same sheet (task)
   cat('\nDB PIDs that occur more than once per task-location: ')
@@ -869,7 +778,7 @@ print.PID<-function(PIDtest, pstep=50){
   PIDtest_ <- PIDtest_[,-(1:2)]
   nc <- nchar(colnames(PIDtest_))
   PIDtest_[PIDtest_==0]<-add.color(PIDtest_[PIDtest_==0],formatting='34m')
-  PIDtest_[PIDtest_>1]<-add.color(PIDtest_[PIDtest_>1], formatting='31m')
+  PIDtest_[PIDtest_>1]<-add.color(PIDtest_[PIDtest_>1],formatting='31m')
   PIDtest_ <- sapply(seq_len(ncol(PIDtest_)),function(k) paste(PIDtest_[,k],paste(rep(' ',nc[k]-1),collapse=''),sep=''))
   PIDMat <- rbind(colnames(PIDtest),cbind(as.matrix(PIDtest[,1:2]),as.matrix(PIDtest_)))
   PIDMat[,1] <- format(PIDMat[,1])
@@ -935,13 +844,7 @@ organizeDB<-function(DBase){
     DB.data[[k]] <- DB.data[[k]][!is.na(DB.data[[k]]$PID),]
   }  
   ut <- unique(DB.task)
-  #testD<-DB.data[DB.task==ut[2]]
-  #testD[[2]][,16]
-  #testD[[1]][,11]
-  #DB <- lapply(ut, function(k) as.tibble(as.data.frame(rbindfilllist(DB.data[DB.task==k]))))
-  #unclass(DB[[2]][,11])
-  DB <- lapply(ut, function(k) as.tibble(as.data.frame(rbindlist(DB.data[DB.task==k],fill=TRUE,use.names=TRUE)))) 
-  
+  DB <- lapply(ut, function(k) as.tibble(as.data.frame(rbindlist(DB.data[DB.task==k],fill=TRUE,use.names=TRUE))))
   names(DB)<-ut
   attr(DB,'tasks')<-ut
   attr(DB,'variables')<-lapply(DB,colnames)
@@ -964,118 +867,7 @@ summary.DB<-function(DB){
   attr(DB,'variables')
 }
 
-catchToList <- function(expr) {
-  val <- NULL
-  myWarnings <- NULL
-  wHandler <- function(w) {
-    myWarnings <<- c(myWarnings, w$message)
-    invokeRestart("muffleWarning")
-  }
-  myError <- NULL
-  eHandler <- function(e) {
-    myError <<- e$message
-    NULL
-  }
-  val <- tryCatch(withCallingHandlers(expr, warning = wHandler), error = eHandler)
-  list(value = val, warnings = myWarnings, error=myError)
-} 
 
-
-AutoTest<-function(FILES, TREE, logFileBase="check", logDir='logs', save_marked = 'on_errors'){
-#AutoTest<-function(FILE, TREE, logFileBase="check", logDir='logs', save_marked = 'on_errors'){
-  if (!suppressWarnings(require(xlsx))) install.packages('xlsx')
-  library(xlsx)
- # assign("last.warning", NULL, envir = baseenv())
-  w<-list()
-  L<-length(FILES$FILE)
-  errors<-rep(0,L)
-  for (Fi in seq_along(FILES$FILE)) {
-    print(paste(Fi, FILES$PATH[Fi]))
-    g<-catchToList({
-      process.one.file(path=FILES$PATH[Fi],TREE,save_marked=save_marked)
-    })
-    errors[Fi]<-sum(na.omit(as.vector(as.data.frame(g$value$marked)=='!PROBLEM!')))
-    w<-c(w,list(gsub('simpleWarning: ','',g$warnings,fixed = TRUE)))
-   # assign("last.warning", NULL, envir = baseenv())
-  }
-  names(w)<-FILES$PATH
-  indERR <- which(errors>0)
-  indw <- sapply(w,length)>0
-  teste <- c('OK','CHECK !')[1+(indw | (errors>0))]
-  
-  indw <- which(indw)
-  wfi <- basename(FILES$PATH[indw])
-  wdt <- w[indw]
-  
-  logDir<-paste(getwd(),'/',logDir,'/',sep='')
-  dir.create(logDir,showWarnings = FALSE)
-  logFile <- paste(logDir,logFileBase, '_',paste(Sys.Date(),gsub(':','',format(Sys.time(),"%X")),sep='_'),'.log',sep='')
-  
-  fileConn<-file(logFile)
-  D<-c("********************************************************************************",
-       paste('log created at:', date()), 
-       "********************************************************************************", 
-       " ",
-       "********************************************************************************",
-       "Results of the check: ",
-       "********************************************************************************", 
-       " ",
-       paste(basename(FILES$PATH),teste,sep='  :  '),
-       " ",
-       "********************************************************************************",
-       "List of files with number of problems: ",
-       "********************************************************************************", 
-       " ",
-       paste(basename(FILES$PATH[indERR]),errors[indERR],sep='  :  '),
-       " ",
-       "********************************************************************************", 
-       "List of files with warnings: ",
-       "********************************************************************************",
-       " ")
-  for (k in seq_along(indw)) {
-    D<-c(D, c('--> ',paste(wfi[k],':'),wdt[[k]],' '))
-    warning(paste(paste(wfi[k],':'),paste(wdt[[k]],collapse = '\n'),sep='\n'))
-  }
-  writeLines(D, fileConn)
-  close(fileConn)
-}
-
-#renames duplicated variables in data.frames organized into a list
-#renames duplicated variables in data.frames organized into a list
-rename.duplicated<-function(DFList, extensions, ignore=c('PID')){
-  if (missing(extensions)) extensions<-names(DFList)
-  if (!length(extensions)) extensions<-seq_along(DFList)
-  if (length(extensions)!=length(DFList)) stop ('extensions must have the same length as the DFList')
-  cnm<-lapply(DFList,colnames)
-  vcnm<-unlist(cnm)
-  dup<-unique(vcnm[duplicated(vcnm)])
-  dup<-dup[!dup%in% ignore]
-  for (j in seq_along(extensions)){
-    n <- cnm[[j]]
-    n[n%in%dup]<-paste(n[n%in%dup],extensions[j],sep='.')
-    colnames(DFList[[j]])<-n
-  }
-  DFList
-}
-
-
-postmerge<-function(DF, varspos, newvar){
-  nDF<-apply(DF[,varspos],1,function(h){
-    tmp<-h[!is.na(h)]
-    if (uniqueN(tmp)>1) stop('postmerge cannot be used, variables differ.')
-    tmp[1]
-  })
-  DF<-DF[,which(!colnames(DF)%in%colnames(DF)[varspos])]
-  DF<-cbind(DF,nDF)
-  colnames(DF)[ncol(DF)]<-newvar
-  DF
-}
-
-miss2NA3 <- function(df, gmc, exceptions = NULL){
-  if (length(exceptions)) checkexceptions(exceptions, colnames(df))
-  FUN <- funs(replace(., . %in% gmc, NA))
-  POS <- which(!(colnames(df) %in% exceptions))
-  df %>% mutate_at(.vars = POS, .funs = FUN) }
 
 #########################################################################################################3
 #########################################################################################################3
@@ -1093,15 +885,11 @@ miss2NA3 <- function(df, gmc, exceptions = NULL){
 # Load database
 #########################################################################################################3
 
-# as of 09/02/2020, this is an R project so don't need to use getwd()
 
 #setwd("/home/maciej/Documents/R-PRJ/Oskar")
-#setwd("C:/Users/ob3587/iCloudDrive/DataToProcess2")
-#setwd("/home/maciej/Documents/R-PRJ/Oskar/MARCH2020")
+setwd("C:/Users/ob3587/Box/DataToProcess2")
 #setwd("C:/Users/ob3587/Dropbox/UT Austin PM/EvoLearn/DataToProcess")
-#setwd("/home/maciej/Documents/R-PRJ/Oskar/DataToProsess4")
-
-## Part3: Load files and make DB----
+#setwd("/home/maciej/Documents/R-PRJ/Oskar/DataToProcess3")
 
 DIR <- getwd() #please set DIR as a parent directory to the database so the base can be searched. 
 #Put rules in DIR directory
@@ -1115,110 +903,36 @@ TREE
 
 FILES <- FindDataFiles(DIR)
 FILES <- FILES[!grepl('_corrected_',FILES$FILE,fixed=TRUE),] #remove corrected file names
-FILES <- FILES[!grepl('SAVEFORLATER!',FILES$DIR,fixed=TRUE),] #remove setaside files0
-
 as.matrix(FILES$DIR)
 as.matrix(FILES$FILE)
 
 DBase <- LOAD_DB(FILES$PATH, TREE = TREE)
 #! be careful if there more than one functional sheets per xlsx, 
 #! code below may not work then. 
-DBase
 
 #########################################################################################################3
-# Check files for mistakes----
-#########################################################################################################3
-# fully automated
-
-#This processes whole database
-# use save_unmarked='always' if you want the old functionality
-AutoTest(FILES, TREE, save_marked='on_errors')
-warnings()
-
-
-#########################################################################################################3
-# Check PIDs----
+# Check PIDs
 #########################################################################################################3
 
 # !!! if there is no PID then it uses PID_Student
 #PIDTEST<-check.PID(DBase,TREE=TREE) # it would be nice if these fully displayed
 
-# see top of the print-out
-# first alternative PID is student second is teacher
-PIDTEST_s = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 8,AlternativePID = "student")
-# first alternative PID is teacher second is student 
-PIDTEST_t = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 8,AlternativePID = "teacher")
-identical(PIDTEST_t,PIDTEST_s)
+PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=10, show.new.pids=50)
+  
 
-PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=50, show.new.pids=500,max.pid.digit = 6)
-PIDTEST
+if (FALSE) PIDTEST #nice printing out , isn't it? ;-) it doesn't anymore! 
 
-# here is no message
-PIDTEST = check.PID(DBase, TREE=TREE, show.miss.pids=20, show.new.pids=50,max.pid.digit = 10)
-PIDTEST
-
-
-
-# go to console and press enter several times
-
-FILES$PATH
-#DBase_MA <- LOAD_DB(FILES$PATH[1:11], TREE = TREE)
-#DBase_MM <- LOAD_DB(FILES$PATH[12:24], TREE = TREE) 
-
-#PIDTEST_MA = check.PID(DBase_MA, TREE=TREE, show.miss.pids=10, show.new.pids=50)
-#PIDTEST_MA
-# go to console and press enter several times
-
-#PIDTEST_MM = check.PID(DBase_MM, TREE=TREE, show.miss.pids=10, show.new.pids=50)
-#PIDTEST_MM
-# go to console and press enter several times
-
-# a simpler version
-#PIDTEST_MA_2 = check.PID(DBase[1:11], TREE=TREE, show.miss.pids=10, show.new.pids=50)
-#PIDTEST_MA_2
-
-#PIDTEST_MM = check.PID(DBase[12:26], TREE=TREE, show.miss.pids=10, show.new.pids=50)
-#PIDTEST_MM
-
-# go to console and press enter several times
-
-#as.data.frame(PIDTEST_MA)
-as.data.frame(PIDTEST)
-#if (TRUE) PIDTEST #nice printing out , isn't it? ;-) it doesn't anymore! 
 
 # uncomment to print csv file of PIDTEST
-# write.csv(PIDTEST,'PIDRES2.csv')
-# write.csv(PIDTEST,'PIDRES_AS_SC.csv')
-# write.csv(PIDTEST,'PIDRES_Lydia.csv',row.names = F)
-# write.csv(PIDTEST,'PIDRES_Saltpond.csv',row.names = F)
+#write.csv(PIDTEST,'PIDRES.csv')
+#write.csv(PIDTEST,'PIDRES_AS_SC.csv')
+#write.csv(PIDTEST,'PIDRES_Lydia.csv',row.names = F)
+#write.csv(PIDTEST,'PIDRES_Saltpond.csv',row.names = F)
 # write.csv(PIDTEST,'PIDRES_Tanna.csv',row.names = F)
-# write.csv(PIDTEST,'PIDRES_Bantu.csv',row.names = F)
-# write.csv(PIDTEST,'PIDRES_Manipur_GPJW.csv',row.names = F)
-#write.xlsx(PIDTEST_MM, 'PIDRES_MM.xlsx',sheetName="MM_FF_PIDs")
-# write.xlsx(PIDTEST_MA_2, 'PIDRES_MA.xlsx',sheetName="MA_JWGP_PIDs")
-#write.xlsx(PIDTEST, 'PIDRES_NA_AKA_NECK_PUZZ.xlsx',sheetName="NA_SG_PIDs")
-#write.xlsx(PIDTEST, 'PIDRES_NB_SP_AKA_NECK_PUZZ.xlsx',sheetName="NBSP_SG_THESISPIDs")
-#write.xlsx(PIDTEST, 'PIDRES_SPMATA.xlsx', sheetName = 'MasterFile_SPMATA_PIDS')
-#write.xlsx(PIDTEST, 'PIDRES_MM_07FEB2020.xlsx', sheetName = 'FF_MM_PIDS')
-#write.xlsx(PIDTEST, 'PIDRES_BA_17FEB2020.xlsx', sheetName = 'SP_BA_PIDS')
-#write.xlsx(PIDTEST, 'PIDRES_AS_17FEB2020.xlsx', sheetName = 'SC_AS_PIDS')
-#write.xlsx(PIDTEST, 'PIDRES_SP_17FEB2020.xlsx', sheetName = 'VD_SP_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_NB_03AUG2020.xlsx', sheetName = 'SG_NB_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_EC_04SEP2020.xlsx', sheetName = 'EC_BR_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_SY_20NOV2020.xlsx', sheetName = 'SY_MG_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_FA_10FEB2020.xlsx', sheetName = 'FA_GI_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_QTHTKSpaper_18JUN2021.xlsx', sheetName = 'QTHTKS_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_YP_12JUL2021.xlsx', sheetName = 'YP_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_WA_18NOV2021.xlsx', sheetName = 'WA_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_SC_demobio_12DEC2021.xlsx', sheetName = 'SC_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_28FEB2022.xlsx', sheetName = 'DemoBio_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_CATVBACAKN_28FEB2022.xlsx', sheetName = 'CATVB_PIDS')
-# write.xlsx(PIDTEST, 'PIDRES_MASTER_demobio_16MAR2022.xlsx', sheetName = 'DemoBio_PIDS')
-
 
 
 #########################################################################################################3
-# Part5: merging----
+# Examplary merging
 #########################################################################################################3
 
 # !!! if there is no PID then it uses PID_Student
@@ -1231,486 +945,48 @@ DBs
 # Example 
 
 # variables in biometric
-DBs$Biometric
+ DBs$Biometric
 # variables in Marshmallow
-DBs$Marshmallow
+#DBs$Marshmallow
 # variables in PuzzleOverIm
 DBs$PuzzleOverIm
 
 DBs$Queensland
 
-#unclass(DB$Biometric[,'grip_L1'])
-
 # example: 
-# DF1<- as.data.frame(DB$Biometric[,c('PID','PID_location','location','age','sex','grip_L1')])
-
+# DF1<- as.data.frame(DB$Biometric[,c('PID','PID_location','location','age','sex')])
 # DF2<- as.data.frame(DB$Marshmallow[,c('PID','PID_location','location','time_to_last_meal','last_meal')])
 # DF3<- as.data.frame(DB$PuzzleOverIm[,c('PID','PID_location','location','box_opened','used_stick')])
+# 
 # DF<-fast.merge.list(list(DF1,DF2,DF3),by=c('PID','PID_location','location'))
 # as.data.table(DF)
 
-#
-### Master file for Lydia ----
+####################################################################
+### Actual Output File 
+# Saltpond all sex and age data
 
-#DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age','loc')])
-#DF2<- as.data.frame(DB$Biometric[,c('PID','PID_location','location','sex','age','height_stand','weight')])
-#DF3<- as.data.frame(DB$AcaKnowl[,c('PID','PID_location','location',"day","month","year","time","recorder","filmed","order",
-#                                   "letter_id","word_id", "sentence_rd", "reading_comp", "reading_total", "counting", "num_id",       
-#                                   "add_subt", "mult_div", "math_total","comments")])
-#DF3<- as.data.frame(DB$AcaKnowl[,c('PID','PID_location','location',"order",
-#                                   "letter_id","word_id", "sentence_rd", "reading_comp", "reading_total", "counting", "num_id",       
-#                                   "add_subt", "mult_div", "math_total","comments")])
-
-#qtlist = as.character(colnames(DB$Queensland[7:79]))#,colnames(DB$Queensland[85:91])))
-#DF4<- as.data.frame(DB$Queensland[,c('PID','PID_location','location',qtlist)])
-#chilist = as.character(colnames(DB$ChildInterview[7:19]))
-#DF5<- as.data.frame(DB$ChildInterview[,c('PID','PID_location','location',chilist)])
-# DF<-fast.merge.list(list(DF1,DF2,DF3),by=c('PID','PID_location','location'))
-# as.data.table(DF)
-
-# DF<-fast.merge.list(list(DF1,DF2,DF3,DF4,DF5),by=c('PID','PID_location','location'))
-# as.data.table(DF)
-# View(DF)
-
-######################################################################
-#  Sabrina Output file! ~ 21OCT2019 ---- 
-
-# DF1<- as.data.frame(DB$PIDreg_noname)
-# DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age_pid','loc','comments')])
-# DF2 <- as.data.frame(DB$AcaKnowl[,c(1:21,25)])
-# DF3 <- as.data.frame(DB$NecklaceOverIm[,c(1:37,42,43:64)])
-# DF4 <- as.data.frame(DB$PuzzleOverIm[,c(1:27,31)])
-# DF_Sabrina <- fast.merge.list(list(DF1,DF2,DF3,DF4),by=c('PID','PID_location','location'))
+DF0 <- as.data.frame(PIDTEST[,c('PID','Location')])
+DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age','loc')])
+DF2<- as.data.frame(DB$Biometric[,c('PID','PID_location','location','sex','age','height_stand','weight')])
+adintlist = as.character(colnames(DB$AdInt[c(1,11,12)])) #,colnames(DB$Queensland[85:91])))
+DF3<- as.data.frame(DB$AdInt[,adintlist])
+DF<-fast.merge.list(list(DF0,DF1,DF2,DF3),by=c('PID'))
 # # as.data.table(DF)
-# View(DF_Sabrina)
+View(DF)
+View(PIDTEST)
 
-# the above created a problem  merging on PID 
-# new version with Maciek's help:
+ads()
 
-# DF1<- as.data.frame(DB$PIDreg_noname[,c('PID','PID_location','location','sex','age_pid','loc','comments')])
-# DF2 <- as.data.frame(DB$AcaKnowl[,c(1:21,25)])
-# DF3 <- as.data.frame(DB$NecklaceOverIm[,c(1:37,42,43:64)])
-# DF4 <- as.data.frame(DB$PuzzleOverIm[,c(1:27,31)])
-
-# DF3$PID<-DF3$PID_student; 
-# DFList<-list(DF1,DF2,DF3,DF4)
-# DFList<-rename.duplicated(DFList, extensions=c('PIDr','AK','NO','PO'), ignore=c('PID'))
-# DF_Sabrina <- fast.merge.list(DFList,by=c('PID'))
-
-# DF3$PID<-DF3$PID_student; 
-# DFList<-list(DF1,DF2,DF3,DF4)
-# DFList<-rename.duplicated(DFList, extensions=c('PIDr','AK','NO','PO'), 
-#                           ignore=c('PID','location','PID_location'))
-# DF_Sabrina <- fast.merge.list(DFList,by=c('PID','location','PID_location'))
-# dim(DF_Sabrina)
+### Actual Output File 
+# Saltpond PIDs 
 
 
-# merge location
-# L<-grep('location',colnames(DF_Sabrina))
-# colnames(DF_Sabrina)[L] #choose location duplicates
-# DF_Sabrina<-postmerge(DF_Sabrina,L[c(2,3,5,7)],"location")
-# dim(DF_Sabrina)
-# 
-# # merge PID_location
-# L<-grep('PID_location',colnames(DF_Sabrina))
-# colnames(DF_Sabrina)[L]
-# DF_Sabrina<-postmerge(DF_Sabrina,L,"PID_location")
-# dim(DF_Sabrina)
-
-# View(DF_Sabrina)
-
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!
-# first acutal output file. redoing this to have all tasks from
-# Manipur, Tanna, Saltpond, and Mah Meri 
-# this is for Cristine's Stanford talk 
-# NOTE: you made a 'master file' for Bruce and Emily to start on 
-# paper analysis, but those haven't moved along 
-# DF1 = as.data.frame(DB$PIDreg_noname) #
-# DF2 = as.data.frame(DB$Biometric) #
-# DF3 = as.data.frame(DB$AcaKnowl) #
-# #DF3 = as.data.frame(DB$CategorVerb) #
-# #DF4 = as.data.frame(DB$ChildInterview) #
-# DF4 = as.data.frame(DB$HookTask) #
-# DF5 = as.data.frame(DB$HTKS) #
-# DF6 = as.data.frame(DB$Marshmallow) #
-# DF7 = as.data.frame(DB$NecklaceOverIm) #
-# #DF9 = as.data.frame(DB$Phonolog) #
-# DF8 = as.data.frame(DB$PuzzleOverIm) #
-# DF12 = as.data.frame(DB$Queensland)
-
-# rename PID_student to PID in necklace
-# DF8$PID<-DF8$PID_student
-
-# for Bruce we need: PID, Bio, AKA, Necklace, Puzzle, Hook  
-#BruceList<-list(DF10,DF2,DF1,DF11,DF8,DF5,DF4)
-#BruceList<-list(DF10[,c(1,2,3,4,9,11,13,14)],DF2[,c(1:19,22,23,25,27)],DF1[c(1:20,22,24)],DF11[,c(1:24,44,46,48)],DF8[,c(1:33,53,55,56,58)],DF5[,c(1:34,36,38)],DF4[,c(1:20,22,24)])
-#BruceList<-rename.duplicated(BruceList, extensions=c('PIDr','BIO','AKA','PUZZ','NECKL','HOOK','CHIINT'), 
-#                                  ignore=c('PID','location','PID_location'))
-#DFBruce <- fast.merge.list(BruceList,by=c('PID','location','PID_location'))
-#dim(DFBruce)
 
 
-# for Emily we need: PID, Bio, AKA, HTKS, Marshmallow
-#EmList<-list(DF10,DF2,DF1,DF6,DF7,DF4)
-#EmList<-rename.duplicated(EmList, extensions=c('PIDr','BIO','AKA','HTKS','MMT','CHIINT'), 
-#                             ignore=c('PID','location','PID_location'))
-#DFEm <- fast.merge.list(EmList,by=c('PID','location','PID_location'))
-#dim(DFEm)
+##############
+#  
 
-# can we merge without using rename duplicated? No. 
-#DFBruce <- fast.merge.list(BruceList,by=c('PID','PID_location','location'))
-
-
-#m1List<-rename.duplicated(m1List, extensions=c('PIDr','BIO','AKA','HTKS','MMT','PUZZ','NECKL','CHIINT','HOOK','CATVERB','PHONO'), 
-#      ignore=c('PID','location','PID_location'))
-#DF_m1 <- fast.merge.list(m1List,by=c('PID','location','PID_location'))
-#dim(DF_m1)
-
-#DF_m1 = fast.merge.list(list(DF10,DF2,DF1,DF6,DF7,DF11,DF8,DF4, DF5, DF3, DF9),by = c('PID_location'))
-
-# MasterFile QTHTKS ----
-# Tanna, Saltpond, and Mah Meri, Natal 
- 
-# DF1 = as.data.frame(DB$PIDreg_noname) #
-# DF2 = as.data.frame(DB$Biometric) #
-# DF3 = as.data.frame(DB$HTKS) #
-# DF4 = as.data.frame(DB$Queensland) #
-# DF5 = as.data.frame(DB$ChildInterview) #
-# DF6 = as.data.frame(DB$Partsurvey) #
-# DF7 = as.data.frame(DB$AdInt)
-# 
-
-# 
-# setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-# setnames(DF6, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-# setnames(DF7, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-# # recall that for years in school: 
-# # child interview: Q6a: which we use below 
-# # adult interview: Q20a_schlyrs 
-# # part surv: years in school minus current age if you are in school now...
-# 
-# QTHTKSlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7)
-# QTHTKSlist = rename.duplicated(QTHTKSlist, extensions=c('PIDr','BIO','HTKS',"QT",'CHIINT','Psurv','Adint'), 
-#                                ignore=c('PID','location','PID_location'))
-# DF_QTHTKS <- fast.merge.list(QTHTKSlist,by=c('PID','location','PID_location'))
-# DF_QTHTKS = DF_QTHTKS %>% mutate(cmb_age.Psurv = replace(cmb_age.Psurv, cmb_age.Psurv < 0 , NA),
-#                                  `10b_schl_go_age` = replace(`10b_schl_go_age`, `10b_schl_go_age` < 0 , NA),
-#                                  `Q20a_schlyrs` = replace(`Q20a_schlyrs`, `Q20a_schlyrs` < 0 , NA),
-#                           psurv_yrsschol = as.numeric(cmb_age.Psurv)  - as.numeric(`10b_schl_go_age`)) %>%
-#                           mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
-#                                  chint_yrsschool = readr::parse_number(Q6a),
-#                                  adint_yrsschool = readr::parse_number(Q20a_schlyrs),
-#                                  yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
-#                                  yrs_school = coalesce(yrs_school, adint_yrsschool))
-# 
-# 
-# dropvec = c('notes','year','month','day','time_s','time_en','task','filmed','comments','Q2','Q3','3_','4_','7_','13_')
-# dim(DF_QTHTKS)
-# DF_QTHTKS_mf = DF_QTHTKS %>% dplyr::select(-contains(dropvec))
-# dim(DF_QTHTKS_mf)
-
-
-# DF_QTHTKS_mf = DF_QTHTKS %>% select(-c(11,17:20,26:41,43:56,319:510,536:539,557:586,641:716,719:814,820:823,826:991))
-# decided to omit this
-
-#stanlist = list(DF1,DF2,DF3,DF4,DF5,DF6,DF7,DF8)
-#stanlist = rename.duplicated(stanlist, extensions=c('PIDr','BIO','AKA','HOOK',"HTKS","MMT",'NECKL','PUZZ'), 
-#                                                    ignore=c('PID','location','PID_location'))
-#DF_stan = fast.merge.list(stanlist, by=c('PID','PID_location','location'))
-
-################################################################
-### Put all of Tanna in one output file...
-#DF1<- as.data.frame(DB$PIDreg_noname[])
-#DF2<- as.data.frame(DB$AcaKnowl[])
-#DF3<- as.data.frame(DB$Biometric[])
-#DF4<- as.data.frame(DB$CategorVerb[])
-#DF5<- as.data.frame(DB$ChildKnot[])
-
-
-# .... and on # imagine i want to do this for all the tasks, one site. 
-#DF<-fast.merge.list(list(DF1,DF2,DF3,DF4),by=c('PID','PID_location','location'))
-#DF<-fast.merge.list(list(DF2,DF3,DF4),by=c('PID','PID_location','location'))
-#as.data.table(DF)
-#View(DF)
-#DF = DF_Sabrina
 #checking for mistakes, but use check.PID() and correct for mistakes before
-
-#############################################
-## Demo Bio Master Master File !! ----
-#############################################
-
-adultcollinks = read_excel("columnlinker_adint_partsurv_v3.xlsx") %>%
-  mutate(PartSurv = paste('X',PartSurv,sep = ""))
-chicollinks = read_excel("columnlinker_chiint_partsurv_v2.xlsx") %>%
-  mutate(PartSurv = paste('X',PartSurv,sep = ""))
-adcols = adultcollinks %>% select(oldname = AdultInt, newname = NewName, PartSurv)
-chicols = chicollinks %>% select(oldname = ChildInt, newname = NewName, PartSurv)
-partcols = data.frame(oldname = c(adcols$PartSurv, chicols$PartSurv), 
-                      newname = c(adcols$newname, chicols$newname))
-allcols = bind_rows(adcols,chicols,partcols)
-# A DF for each dataset
-# then define blocks:
-# 1 - all the Nonames and Bios 
-DF1 <- as.data.frame(DB$PIDreg_noname[])
-DF2 <- as.data.frame(DB$Biometric[]) %>% 
-  select(-c(contains('...'),seat_height,height_sit))
-DF3 <- as.data.frame(DB$AdInt[])
-DF4 <- as.data.frame(DB$ChildInterview[])
-DF5 <- as.data.frame(DB$Partsurvey) %>% 
-  mutate(par_check = replace_na(par_check, '0')) #%>%
-#  filter(par_check != 1) # removes repeat PIDs for EC and SY where parents completed a mini online surve
-# later fixed this a different way 
-
-# rename child int
-setnames(DF4, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-# rename part survey
-setnames(DF5, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-# rename ad int
-setnames(DF3, old = allcols$oldname, new = allcols$newname, skip_absent = TRUE)
-
-chipartcols = c(names(DF4)) # which columns to retain -- all of chipart and those that overlap with 
-DFchipart = bind_rows(DF4, DF5) %>% select(any_of(chipartcols))
-adpartcols = c(names(DF3)) # which columns to retain -- all of adult surve and those that overlap with 
-DFadintpart = bind_rows(DF3, DF5) %>% select(any_of(adpartcols))
-partsurvothercols = setdiff(names(DF5),c(chipartcols,adpartcols))
-DFotherpart = DF5 %>% select(PID, location, PID_location, any_of(partsurvothercols))
-
-demogbiolist = list(DF1,DF2,DFchipart, DFadintpart,DFotherpart)
-demogbiolist = rename.duplicated(demogbiolist, extensions=c('PIDr','BIO','chipart','adpart','othpart'), 
-                                                    ignore=c('PID','location','PID_location'))
-
-DF_biodem = fast.merge.list(demogbiolist, by=c('PID','PID_location','location'))
-
-# DT <- as.data.table(DF_biodem)
-# DT = DT[,which(unlist(lapply(DT, function(x)!all(is.na(x))))),with=F]
-
-not_all_na <- function(x) any(!is.na(x))
-DF_biodem = DF_biodem %>% select(where(not_all_na)) # doesn't remove as many as hoped.
-
-DF_biodem = DF_biodem %>% mutate(cmb_age = replace(cmb_age, cmb_age < 0 , NA),
-                                  X10b_schl_go_age = replace(X10b_schl_go_age, X10b_schl_go_age < 0 , NA),
-                                  Q20a_schlyrs = replace(Q20a_schlyrs, Q20a_schlyrs < 0 , NA),
-                          psurv_yrsschol = as.numeric(cmb_age)  - as.numeric(X10b_schl_go_age)) %>%
-                          mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
-                                 chint_yrsschool = readr::parse_number(Q6a),
-                                 chint_yrsschool = replace(chint_yrsschool, chint_yrsschool < 0, NA),
-                                 adint_yrsschool = readr::parse_number(Q20a_schlyrs),
-                                 yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
-                                 yrs_school = coalesce(yrs_school, adint_yrsschool))
-
-##################################################
-## DemoBio Mater, experiment with complex merge ----
-##################################################
-
-# remove factors from data.frame
-factorsAsStrings<-function(df){
-  i <- sapply(df, is.factor)
-  df[i] <- lapply(df[i], as.character)
-  df
-}
-
-# correct match.list, see below
-organize.mt <- function(match.list){
-  mtn <- names(match.list)
-  if (!length(mtn)) stop('match.list must be a named list.', call. = NA)
-  if (any(mtn %in% c('',' ',NA))) stop('Wrong names in match.list.', call. = NA)
-  for (i in seq_along(match.list)) match.list[[i]] <- unique(c(mtn[i],match.list[[i]]))
-  match.list
-}
-
-create.match.list<-function(An, Bn, key){
-  key <- factorsAsStrings(key)
-  if (is.data.frame(An)) An <- colnames(An) else stop('An must be a data.frame',call.=FALSE)
-  if (is.data.frame(Bn)) Bn <- colnames(Bn) else stop('Bn must be a data.frame',call.=FALSE)
-  key <- data.frame(key)
-  if(!('NewName' %in% colnames(key))) {
-    warning('No "NewName" column in the key file, using first column of the key to generate names or merged variables.', call.=NA)
-    key$NewName <- key[,1]
-  }  
-  colnames(key)[1:2]=c('A','B')
-  key <- key[,c('A','B','NewName')]
-  # check for duplicates
-  AB <- intersect(An,Bn)
-  if (length(AB)) for (j in seq_along(AB)) {
-    if (!(AB[j] %in% key[,1]) && !(AB[j] %in% key[,2])) key<-rbind(key, rep(AB[j],3))
-    warning(paste(AB[j], 'is present in both data frames, but not in the key. It was added to the match list.'),call.=FALSE)
-  }
-  if (any(duplicated(key[,1]))) stop('Duplicated names found in the first column of the key file.',call. = NA)
-  if (any(duplicated(key[,2]))) stop('Duplicated names found in the second column of the key file.',call. = NA)
-  indA<-key[,1] %in% c(An)
-  indB<-key[,2] %in% c(Bn)
-  if (!all(indA)) warning(paste(paste(key[which(!indA),1],collapse = ', '),'variable(s) declared in the first column of the key file not present in the first data frame.'), call.=NA) 
-  if (!all(indB)) warning(paste(paste(key[which(!indB),2],collapse = ', '),'variable(s) declared in the second column of the key file not present in the second data frame.'), call.=NA) 
-  # check for cross
-  indC <- (key[,1] %in% key[,2]) & (key[,2] %in% key[,1]) & (key[,2] != key[,1])
-  if (any(indC)) {
-    print(key[which(indC),])
-    stop('The "cross-nameing" found. Please rename variables manually.',call.=NA)
-  }
-  nkey <- key[which(indA&indB&(!indC)),]
-  indA1  <- !(An %in% key[,1])
-  indB1  <- !(Bn %in% key[,2])
-  A1  <- An[which(indA1)]
-  B1  <- Bn[which(indB1)]
-  A1l <- as.list(A1)
-  B1l <- as.list(B1)
-  names(A1l) <- A1
-  names(B1l) <- B1
-  nkeyl <- lapply(seq_len(nrow(nkey)),function(k) nkey[k,1:2])
-  names(nkeyl)<-nkey$NewName
-  c(A1l,B1l,nkeyl)
-}
-
-# A, B - data frames to bind
-# match.list - a list with dictionary (see below)
-# gr.lab - a name of the grouping variable
-# gr.nam - names of used data.frames to be placed in grouping variable
-# remove.empty - remove unused variables from match.list
-complex_rbind<-function(A, B, match.list, gr.lab='gr', gr.nam=c('a','b'), remove.empty=TRUE, debug=FALSE){
-  A <- factorsAsStrings(A)
-  B <- factorsAsStrings(B)
-  match.list <- organize.mt(match.list)
-  if (!is.data.frame(A)) stop('A must be a data.frame')
-  if (!is.data.frame(B)) stop('B must be a data.frame')
-  cA <- colnames(A)
-  cB <- colnames(B)
-  umt <- c(unlist(match.list),gr.lab)
-  if (!all(cA %in% umt)) stop('Some variables of data.frame A are not present in match.list', call. = NA)
-  if (!all(cB %in% umt)) stop('Some variables of data.frame B are not present in match.list', call. = NA)
-  emptyA <- rep(NA,nrow(A))
-  emptyB <- rep(NA,nrow(B))
-  if  (gr.lab %in% cA) grA <- A[[gr.lab]] else grA<-rep(gr.nam[1], nrow(A))
-  if  (gr.lab %in% cB) grB <- B[[gr.lab]] else grB<-rep(gr.nam[2], nrow(B))
-  gr <- c(as.character(grA), as.character(grB))
-  res <- data.frame(gr=gr)
-  colnames(res) <- gr.lab
-  for (i in seq_along(match.list)){
-    if (debug) {
-      cat('**',i,'**\n')
-      print(match.list[[i]])
-    }
-    ni <- names(match.list)[i]
-    iA <- which(match(cA, match.list[[i]], nomatch = 0) > 0)
-    if (!length(iA)) tmpA<-emptyA else {
-      if(length(iA)>1) stop('Replicated variables in A or cross-merging.',call. = NA)
-      tmpA<-A[,iA]
-    }
-    iB <- which(match(cB, match.list[[i]], nomatch = 0) > 0)
-    if (!length(iB)) tmpB<-emptyB else {
-      if(length(iB)>1) stop('Replicated variables in B or cross-merging.',call. = NA)
-      tmpB<-B[,iB]
-    }
-    tmp <- data.frame(V=c(tmpA,tmpB))
-    names(tmp) <- ni
-    if (!(remove.empty && all(is.na(tmp)))) res <- cbind(res, tmp)
-  }
-  res
-}
-
-#Previously, we renamed first, but that was perhaps a mistake 
-# lets reorient the DFs 
-DF1 <- as.data.frame(DB$PIDreg_noname[])
-DF2 <- as.data.frame(DB$Biometric[]) %>% 
-  select(-c(contains('...'),seat_height,height_sit))
-DF3 <- as.data.frame(DB$AdInt[])
-DF4 <- as.data.frame(DB$ChildInterview[])
-DF5 <- as.data.frame(DB$Partsurvey) %>% 
-  mutate(par_check = replace_na(par_check, '0')) %>%
-  filter(par_check != 1) # removes repeat PIDs for
-# EC and SY where parents completed a mini online survey 
-
-
-
-adpartkey = data.frame(
-            A=adultcollinks$AdultInt,
-            B=adultcollinks$PartSurv,
-            NewName=adultcollinks$NewName)
-
-match.list.ad <- create.match.list(DF3, DF5, adpartkey)
-DF6 = complex_rbind(DF3, DF5, match.list.ad, gr.nam=c("AdInt","Partsurvey"), gr.lab='Task')
-
-chipartkey = data.frame(
-  A=chicollinks$ChildInt,
-  B=chicollinks$PartSurv,
-  NewName=chicollinks$NewName)
-
-match.list.chi <- create.match.list(DF4, DF5, chipartkey)
-
-DF7 = complex_rbind(DF4, DF5, match.list.chi, gr.nam=c("Chint","Partsurvey"), gr.lab='Task')
-
-demogbiolist = list(DF1,DF2,DF6, DF7) # < replace DF3 - 5 with newly created merged DFs
-demogbiolist = rename.duplicated(demogbiolist, extensions=c('PIDr','BIO','adpart','chipart'), 
-                                 ignore=c('PID','location','PID_location'))
-
-DF_biodem = fast.merge.list(demogbiolist, by=c('PID','PID_location','location'))
-
-doubchecks = table(DF_biodem$PID,DF_biodem$location)
-xx = as.data.frame(doubchecks)
-view(xx %>% filter(Freq > 1))
-
-which(doubchecks > 1)
-
-
-
-
-t1<-sum(duplicated(DF_biodem$PID)) 
-t2<-sum(duplicated(DF_biodem$PID_location)) 
-if (t1>0) warning('The same PID found in two or more different locations. Is this possible?',call.=FALSE)
-if (t2>0) warning('Several copies of the same PID found in the same task and location! ',call.=FALSE)
-
-
-# DT <- as.data.table(DF_biodem)
-# DT = DT[,which(unlist(lapply(DT, function(x)!all(is.na(x))))),with=F]
-
-not_all_na <- function(x) any(!is.na(x))
-DF_biodem = DF_biodem %>% select(where(not_all_na)) # doesn't remove as many as hoped.
-
-DF_biodem = DF_biodem %>% mutate(cmb_age = replace(cmb_age, cmb_age < 0 , NA),
-                                 X10b_schl_go_age = replace(X10b_schl_go_age, X10b_schl_go_age < 0 , NA),
-                                 Q20a_schlyrs = replace(Q20a_schlyrs, Q20a_schlyrs < 0 , NA),
-                                 psurv_yrsschol = as.numeric(cmb_age)  - as.numeric(X10b_schl_go_age)) %>%
-  mutate(psurv_yrsschol2 = replace(psurv_yrsschol,psurv_yrsschol < 0 | psurv_yrsschol > 100, NA),
-         chint_yrsschool = readr::parse_number(Q6a),
-         chint_yrsschool = replace(chint_yrsschool, chint_yrsschool < 0, NA),
-         adint_yrsschool = readr::parse_number(Q20a_schlyrs),
-         yrs_school = coalesce(psurv_yrsschol2, chint_yrsschool),
-         yrs_school = coalesce(yrs_school, adint_yrsschool))
-
-
-
-##################################################
-## Categorical Verbal and AKA ----
-##################################################
-# 
-# DF1 <- as.data.frame(DB$CategorVerb[])
-# DF1 <- DF1 %>% select(-c(`...1`:fieldsite))
-# DF1 <- DF1 %>% select(-contains('item'),-comments) %>% 
-#   pivot_wider(., id_cols = c(PID,location,task,PID_long,PID_task,PID_location,RA_initials),
-#                            names_from = type, values_from = c(n, time, repeats))
-
-# make a version of CatVerb that has the items. 
-DF1 <- as.data.frame(DB$CategorVerb[])
-DF1 <- DF1 %>% select(-c(`...1`:fieldsite),-c(comments,task,PID_long,PID_task,RA_initials))
-DF1 <- DF1 %>%  
-pivot_wider(., id_cols = c(PID,location,PID_location),
-            names_from = type, values_from = c(item_1:item_54), names_glue = "{type}_{.value}")
-DF1 = miss2NA3(DF1,gmc)
-DF1_animals = DF1 %>% select(-contains('plants'))
-DF1_plants = DF1 %>% select(-contains('animals'))
-
-
-# DF2 <- as.data.frame(DB$AcaKnowl[])
-# DF2 <- DF2 %>% select(-c(day:filmed), -c(comments:late_stop), -c(back_noise:general_qaqc_comments),
-#                       -c(interruption_length:other_issues_comment))
-# 
-# DFcatvbakalist = list(DF1,DF2)
-# DFcatvbakalist = rename.duplicated(DFcatvbakalist, extensions=c('CATVB', 'AKA'), 
-#                                  ignore=c('PID','location','PID_location','task'))
-# DF_catvbaka <- fast.merge.list(list(DF2,DF1),by=c('PID','PID_location','location')) 
-# DF_catvbaka <- DF_catvbaka %>% select(-contains('...'), -c(PID_long.x, PID_long.y, PID_task.x, PID_task.y),
-#                                       -c(task.x,task.y),-RA_initials)
-
-
 t1<-sum(duplicated(DF$PID)) 
 t2<-sum(duplicated(DF$PID_location)) 
 if (t1>0) warning('The same PID found in two or more different locations. Is this possible?',call.=FALSE)
@@ -1721,58 +997,29 @@ which(doubchecks > 1)
 
 
 # to add today's date to file name
-td=format(lubridate::today(), "%Y%m%d") #!! actually this was perhaps a bad idea. yes it 
-# automatically adds the date to file name but if we did date manually, we'd have a dated 
-# record for each time we created a master file. 
-
+#td=format(lubridate::today(), "%Y%m%d")
 #xlsx::write.xlsx(DF,paste('Lydia_Data_',td,'.xlsx'),sheetName="LydiaData", row.names=FALSE,showNA=FALSE)
 # library(dplyr)
 # DF=DF%>%group_by(location)%>%arrange(age.y)
 #write.csv(DF,paste('Lydia_Data_',td,'.csv'))
 #readr::write_csv(DF,paste('Lydia_Data_',td,'.csv'))
 
+#########################################################################################################3
+# Check for mistakes
+#########################################################################################################3
 
-#DF2=DF%>%group_by(location) %>%arrange(as.numeric(age_pid), .by_group = TRUE)
-#xlsx::write.xlsx(DF2,paste('Sabrina_Data2_',td,'.xlsx'),sheetName="SabrinaData", row.names=FALSE,showNA=FALSE)
+# fully automated
 
-#DFBruce=DFBruce%>%group_by(location) %>%arrange(as.numeric(age_pid), .by_group = TRUE) %>% ungroup()
-#DFBruce = as.data.frame(DFBruce)
-#xlsx::write.xlsx(DFBruce,paste('DF_OvImHook_TASPMA_MasterFile_',td,sep='','.xlsx'),sheetName="BruceOvIm_minimaster",row.names = 'FALSE')
-#DFEm=DFEm%>%group_by(location) %>%arrange(as.numeric(age_pid), .by_group = TRUE) %>% ungroup()
-#DFEm = as.data.frame(DFEm)
-#xlsx::write.xlsx(DFEm,paste('DF_SELFREG_TASPMA_MasterFile_',td,sep='','.xlsx'),sheetName="EmilySelfReg_minimaster", row.names = 'FALSE')
-# the above is very very slow. 
+last.warning <<- NULL
+#This process whole database
+for (Fi in seq_along(FILES$FILE)) {
+  print(paste(Fi, FILES$PATH[Fi]))
+  process.one.file(path=FILES$PATH[Fi],TREE)
+  warnings()
+}
 
-#xlsx::write.xlsx(DF_stan,paste('DF_StanfordTalk_Master_',td,sep='','.xlsx'),sheetName="StandfordTalk_minimaster",row.names = 'FALSE')
-
-# DF_QTHTKS_mf = DF_QTHTKS_mf %>% group_by(location) %>% arrange(as.numeric(age_pid), .by_group = TRUE) %>% ungroup()
-# DF_QTHTKS_mf = as.data.frame(DF_QTHTKS_mf)
-# next, need to drop irrelevant columns and 
-
-#xlsx::write.xlsx(DFBruce,paste('DF_OvImHook_TASPMA_MasterFile_',td,sep='','.xlsx'),sheetName="BruceOvIm_minimaster",row.names = 'FALSE')
-# xlsx::write.xlsx(DF_QTHTKS_mf,paste('DF_QTHTKS_MasterFile_',td,sep='','.xlsx'),sheetName="QTHTKS_mf",row.names = 'FALSE')
-
-# xlsx::write.xlsx(DF_biodem,paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",row.names = 'FALSE')
-
-#openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'))
-# write.xlsx(DF_catvbaka, paste('DF_CATVBAKA_MasterFile_',td,sep='','.xlsx'),sheetName="CATVB_mf",
-#           showNA = FALSE, row.names = 'FALSE')
-
-#write.xlsx(DF_biodem, paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'),sheetName="BioDem_all",
- #          showNA = FALSE, row.names = 'FALSE')
-#openxlsx::write.xlsx(DF_biodem, file = paste('DF_BioDemo_MasterFile_',td,sep='','.xlsx'), sheetName="BioDem_all")
-openxlsx::write.xlsx(DF1_animals, file = paste('DF_animallists',td,sep='','.xlsx'), sheetName="animals_all")
-openxlsx::write.xlsx(DF1_plants, file = paste('DF_plantlists',td,sep='','.xlsx'), sheetName="plants_all")
-
-
-
-#str(DF2)
-#write.csv(DF,paste('Lydia_Data_',td,'.csv'))
-#readr::write_csv(DF2,paste('Sabrina_Data_',td,'.csv'),na='')
-#write.xlsx(DF,paste('Sabrina_Data_',td,'.xlsx'))
-
-
-
+#display warnings , read themcarefuly
+warnings()
 
 # ###################################################################################################
 # # older examples
@@ -1828,8 +1075,3 @@ openxlsx::write.xlsx(DF1_plants, file = paste('DF_plantlists',td,sep='','.xlsx')
 # Check.variable(x, name='handed_ball',sheet="Biometric", TREE)
 # 
 # try(Check.variable(x, sheet='PhonoLog',name="PID", TREE))
-
-
-
-
-
