@@ -18,5 +18,5 @@ Note - the file structure has to be:
 For use, simply find the 'automatated' part. Load all the functions above that, and run. 
 Many parts of the code below where the functions are loaded contains potentially useful tangents and tools. 
 
-This R was designed and is maintained by myself and Maciek Danko: https://github.com/MaciejDanko
+This R code was designed and is maintained by myself and Maciek Danko: https://github.com/MaciejDanko
 
