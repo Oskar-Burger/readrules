@@ -3,9 +3,9 @@ Idiosyncratic (for now) data cleaning software that we have come to know as 'Loo
 
 update -- 
 by 'idiosyncratic' we mean that this was written for a specific purpose - cleaning and merging files from a large comparative project. 
-It was not written with generalization in mind. You might even say it wasn't written with anyone in mind other than the immediate user. 
+It was not written with generalization in mind. You might even say it wasn't written with anyone in mind other than the immediate user and this particular project. 
 
-That said, a lot of the content could be useful for other projects. 
+That said, a lot of the content could be useful for other projects where cleaning data based on a data dictionary or performing complex merges would be useful. 
 
 Note - the file structure has to be:
  - readrules in root directory 
